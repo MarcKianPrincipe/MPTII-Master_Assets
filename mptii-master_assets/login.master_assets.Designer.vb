@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
         Panel1 = New Panel()
-        txtUser = New TextBox()
+        txtUsername = New TextBox()
         PictureBox1 = New PictureBox()
         PictureBox2 = New PictureBox()
         Panel2 = New Panel()
@@ -42,21 +42,21 @@ Partial Class Form1
         ' Panel1
         ' 
         Panel1.BackColor = Color.White
-        Panel1.Controls.Add(txtUser)
+        Panel1.Controls.Add(txtUsername)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Location = New Point(30, 124)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(336, 54)
         Panel1.TabIndex = 0
         ' 
-        ' txtUser
+        ' txtUsername
         ' 
-        txtUser.BorderStyle = BorderStyle.None
-        txtUser.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
-        txtUser.Location = New Point(69, 12)
-        txtUser.Name = "txtUser"
-        txtUser.Size = New Size(255, 32)
-        txtUser.TabIndex = 1
+        txtUsername.BorderStyle = BorderStyle.None
+        txtUsername.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
+        txtUsername.Location = New Point(69, 12)
+        txtUsername.Name = "txtUsername"
+        txtUsername.Size = New Size(255, 32)
+        txtUsername.TabIndex = 1
         ' 
         ' PictureBox1
         ' 
@@ -71,9 +71,9 @@ Partial Class Form1
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(12, 32)
+        PictureBox2.Location = New Point(12, 21)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(372, 69)
+        PictureBox2.Size = New Size(372, 80)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 1
         PictureBox2.TabStop = False
@@ -94,6 +94,7 @@ Partial Class Form1
         txtPassword.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
         txtPassword.Location = New Point(69, 12)
         txtPassword.Name = "txtPassword"
+        txtPassword.PasswordChar = "*"c
         txtPassword.Size = New Size(255, 32)
         txtPassword.TabIndex = 1
         ' 
@@ -161,7 +162,7 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents txtUser As TextBox
+    Friend WithEvents txtUsername As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel2 As Panel
