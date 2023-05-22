@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class loginForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(loginForm))
         Panel1 = New Panel()
         txtUsername = New TextBox()
         PictureBox1 = New PictureBox()
@@ -52,10 +52,10 @@ Partial Class Form1
         ' txtUsername
         ' 
         txtUsername.BorderStyle = BorderStyle.None
-        txtUsername.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
-        txtUsername.Location = New Point(69, 12)
+        txtUsername.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
+        txtUsername.Location = New Point(69, 13)
         txtUsername.Name = "txtUsername"
-        txtUsername.Size = New Size(255, 32)
+        txtUsername.Size = New Size(255, 26)
         txtUsername.TabIndex = 1
         ' 
         ' PictureBox1
@@ -71,9 +71,9 @@ Partial Class Form1
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(12, 21)
+        PictureBox2.Location = New Point(0, 23)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(372, 80)
+        PictureBox2.Size = New Size(393, 81)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 1
         PictureBox2.TabStop = False
@@ -91,11 +91,11 @@ Partial Class Form1
         ' txtPassword
         ' 
         txtPassword.BorderStyle = BorderStyle.None
-        txtPassword.Font = New Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point)
-        txtPassword.Location = New Point(69, 12)
+        txtPassword.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
+        txtPassword.Location = New Point(69, 14)
         txtPassword.Name = "txtPassword"
         txtPassword.PasswordChar = "*"c
-        txtPassword.Size = New Size(255, 32)
+        txtPassword.Size = New Size(255, 26)
         txtPassword.TabIndex = 1
         ' 
         ' PictureBox3
@@ -133,14 +133,14 @@ Partial Class Form1
         btnCancel.Name = "btnCancel"
         btnCancel.Size = New Size(337, 39)
         btnCancel.TabIndex = 4
-        btnCancel.Text = "Cancel"
+        btnCancel.Text = "Exit"
         btnCancel.UseVisualStyleBackColor = False
         ' 
-        ' Form1
+        ' loginForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = SystemColors.ButtonFace
+        BackColor = Color.Gainsboro
         ClientSize = New Size(396, 389)
         Controls.Add(btnCancel)
         Controls.Add(btnLogin)
@@ -148,9 +148,9 @@ Partial Class Form1
         Controls.Add(PictureBox2)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
-        Name = "Form1"
+        Name = "loginForm"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Form1"
+        Text = "s"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()

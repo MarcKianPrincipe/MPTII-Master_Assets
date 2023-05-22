@@ -1,9 +1,10 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class Form1
+Public Class loginForm
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Application.Exit()
     End Sub
+
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;Integrated Security=True"
@@ -44,6 +45,32 @@ Public Class Form1
                 End If
             End Using
         End Using
+    End Sub
+
+    Private Sub btnLogin_MouseEnter(sender As Object, e As EventArgs) Handles btnLogin.MouseEnter
+        ' Change the button's hover color to #0f1d41
+        btnLogin.BackColor = ColorTranslator.FromHtml("#0f1d41")
+    End Sub
+
+    Private Sub btnLogin_MouseLeave(sender As Object, e As EventArgs) Handles btnLogin.MouseLeave
+        ' Change the button's color to #1f9bde
+        btnLogin.BackColor = ColorTranslator.FromHtml("#1f9bde")
+    End Sub
+
+
+
+    Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ' Simulate a click event on the login button
+            btnLogin.PerformClick()
+        End If
+    End Sub
+
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ' Simulate a click event on the login button
+            btnLogin.PerformClick()
+        End If
     End Sub
 
     Private Function isAdmin(username As String, password As String, connection As SqlConnection) As Boolean
