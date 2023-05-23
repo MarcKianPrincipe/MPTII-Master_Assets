@@ -5,7 +5,7 @@ Public Class userForm
 
     Private Sub userForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Connection string for your SQL Server
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;Integrated Security=True"
+        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;Persist Security Info=True;User ID=sa;Password=password"
 
         ' SQL query to fetch the data from the table
         Dim query As String = "SELECT [Laptop Number], [Purchase Date], [Year Age], [Isuued To], [Department], [Brand], [Processor], [Windows], [O365 Expiration], [Active Directory] FROM [TBmptii-assets]"

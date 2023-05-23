@@ -28,8 +28,8 @@ Partial Class loginForm
         PictureBox1 = New PictureBox()
         PictureBox2 = New PictureBox()
         Panel2 = New Panel()
-        txtPassword = New TextBox()
         PictureBox3 = New PictureBox()
+        txtPassword = New TextBox()
         btnLogin = New Button()
         btnCancel = New Button()
         Panel1.SuspendLayout()
@@ -53,17 +53,17 @@ Partial Class loginForm
         ' 
         txtUsername.BorderStyle = BorderStyle.None
         txtUsername.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        txtUsername.Location = New Point(69, 13)
+        txtUsername.Location = New Point(49, 13)
         txtUsername.Name = "txtUsername"
-        txtUsername.Size = New Size(255, 26)
+        txtUsername.Size = New Size(275, 26)
         txtUsername.TabIndex = 1
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(3, 9)
+        PictureBox1.Location = New Point(3, 13)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(60, 35)
+        PictureBox1.Size = New Size(40, 26)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -81,32 +81,32 @@ Partial Class loginForm
         ' Panel2
         ' 
         Panel2.BackColor = Color.White
-        Panel2.Controls.Add(txtPassword)
         Panel2.Controls.Add(PictureBox3)
+        Panel2.Controls.Add(txtPassword)
         Panel2.Location = New Point(30, 184)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(336, 54)
         Panel2.TabIndex = 2
         ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(3, 14)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(40, 26)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 2
+        PictureBox3.TabStop = False
+        ' 
         ' txtPassword
         ' 
         txtPassword.BorderStyle = BorderStyle.None
         txtPassword.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        txtPassword.Location = New Point(69, 14)
+        txtPassword.Location = New Point(49, 14)
         txtPassword.Name = "txtPassword"
         txtPassword.PasswordChar = "*"c
-        txtPassword.Size = New Size(255, 26)
+        txtPassword.Size = New Size(275, 26)
         txtPassword.TabIndex = 1
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(3, 9)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(60, 35)
-        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 0
-        PictureBox3.TabStop = False
         ' 
         ' btnLogin
         ' 
@@ -167,7 +167,7 @@ Partial Class loginForm
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents txtPassword As TextBox
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents btnLogin As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents PictureBox3 As PictureBox
 End Class

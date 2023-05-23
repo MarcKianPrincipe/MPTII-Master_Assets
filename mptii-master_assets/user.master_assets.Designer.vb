@@ -55,9 +55,9 @@ Partial Class userForm
         ' pictureAccount
         ' 
         pictureAccount.Image = CType(resources.GetObject("pictureAccount.Image"), Image)
-        pictureAccount.Location = New Point(1408, 35)
+        pictureAccount.Location = New Point(1415, 36)
         pictureAccount.Name = "pictureAccount"
-        pictureAccount.Size = New Size(54, 52)
+        pictureAccount.Size = New Size(41, 45)
         pictureAccount.SizeMode = PictureBoxSizeMode.Zoom
         pictureAccount.TabIndex = 1
         pictureAccount.TabStop = False
@@ -100,7 +100,7 @@ Partial Class userForm
         ' 
         ' btnSearch
         ' 
-        btnSearch.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
+        btnSearch.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
         btnSearch.Location = New Point(1319, 18)
         btnSearch.Name = "btnSearch"
         btnSearch.Size = New Size(114, 33)
