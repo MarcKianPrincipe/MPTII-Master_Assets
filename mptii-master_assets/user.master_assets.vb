@@ -5,10 +5,10 @@ Public Class userForm
 
     Private Sub userForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Connection string for your SQL Server
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;Persist Security Info=True;User ID=sa;Password=password"
+        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;User ID=sa;Password=password"
 
         ' SQL query to fetch the data from the table
-        Dim query As String = "SELECT [Laptop Number], [Purchase Date], [Year Age], [Isuued To], [Department], [Brand], [Processor], [Windows], [O365 Expiration], [Active Directory] FROM [TBmptii-assets]"
+        Dim query As String = "SELECT [Unit Number], [Asset Type], [Current User], [Purchase Date], [Year Age], [Issued To], [Department], [Brand], [Model], [Processor], [Windows], [O365 Expiration], [Active Directory], [Status] FROM [DBmptii_master-asset].[dbo].[TBmptii-assets]"
 
         ' Create a new DataTable to hold the data
         dataTable = New DataTable()
@@ -28,7 +28,9 @@ Public Class userForm
         ' Set the header color
         dgAssets.EnableHeadersVisualStyles = False
         dgAssets.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#d7d5d5")
-        ' Set the font size of the text in the table
+
+        ' Manually adjust the vertical scrollbar
+        dgAssets.ScrollBars = ScrollBars.Both
     End Sub
 
 
