@@ -30,6 +30,13 @@ Partial Class adminForm
         Panel3 = New Panel()
         Label1 = New Label()
         ToolTip1 = New ToolTip(components)
+        pbDesktop = New PictureBox()
+        pbViewSummary = New PictureBox()
+        pbLaptop = New PictureBox()
+        pbTotal = New PictureBox()
+        pbActive = New PictureBox()
+        pbInactive = New PictureBox()
+        pbDispose = New PictureBox()
         Panel2 = New Panel()
         dgAssets = New DataGridView()
         Panel4 = New Panel()
@@ -64,65 +71,60 @@ Partial Class adminForm
         Label2 = New Label()
         txtUnitNumber = New TextBox()
         Panel5 = New Panel()
+        pbClearButton = New PictureBox()
         txtSearch = New TextBox()
         btnSearch = New Button()
         Panel7 = New Panel()
         lblDesktopNumber = New Label()
         PictureBox5 = New PictureBox()
-        PictureBox2 = New PictureBox()
         pnViewSummary = New Panel()
         lblViewSummary = New Label()
         PictureBox8 = New PictureBox()
-        pbViewSummary = New PictureBox()
         Panel8 = New Panel()
         lblLaptopNumber = New Label()
         PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
         Panel9 = New Panel()
         lblTotalNumber = New Label()
         PictureBox6 = New PictureBox()
-        PictureBox7 = New PictureBox()
         Panel11 = New Panel()
         lblActiveNumber = New Label()
         PictureBox10 = New PictureBox()
-        PictureBox11 = New PictureBox()
         Panel12 = New Panel()
         lblInactiveNumber = New Label()
         PictureBox12 = New PictureBox()
-        PictureBox13 = New PictureBox()
         Panel13 = New Panel()
         lblDisposeNumber = New Label()
         PictureBox14 = New PictureBox()
-        PictureBox15 = New PictureBox()
         Panel1.SuspendLayout()
         CType(pictureAccount, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel3.SuspendLayout()
+        CType(pbDesktop, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbViewSummary, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbLaptop, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbTotal, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbActive, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbInactive, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbDispose, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
         CType(dgAssets, ComponentModel.ISupportInitialize).BeginInit()
         Panel4.SuspendLayout()
         Panel5.SuspendLayout()
+        CType(pbClearButton, ComponentModel.ISupportInitialize).BeginInit()
         Panel7.SuspendLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         pnViewSummary.SuspendLayout()
         CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
-        CType(pbViewSummary, ComponentModel.ISupportInitialize).BeginInit()
         Panel8.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         Panel9.SuspendLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         Panel11.SuspendLayout()
         CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox11, ComponentModel.ISupportInitialize).BeginInit()
         Panel12.SuspendLayout()
         CType(PictureBox12, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
         Panel13.SuspendLayout()
         CType(PictureBox14, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox15, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -179,13 +181,90 @@ Partial Class adminForm
         Label1.Text = "Copyright @ 2023 Much Prosperity Trading Inc.. All Rights Reserved."
         Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' pbDesktop
+        ' 
+        pbDesktop.Image = CType(resources.GetObject("pbDesktop.Image"), Image)
+        pbDesktop.Location = New Point(0, 0)
+        pbDesktop.Name = "pbDesktop"
+        pbDesktop.Size = New Size(69, 56)
+        pbDesktop.SizeMode = PictureBoxSizeMode.Zoom
+        pbDesktop.TabIndex = 1
+        pbDesktop.TabStop = False
+        ToolTip1.SetToolTip(pbDesktop, "Desktop")
+        ' 
+        ' pbViewSummary
+        ' 
+        pbViewSummary.Image = CType(resources.GetObject("pbViewSummary.Image"), Image)
+        pbViewSummary.Location = New Point(0, 6)
+        pbViewSummary.Name = "pbViewSummary"
+        pbViewSummary.Size = New Size(78, 43)
+        pbViewSummary.SizeMode = PictureBoxSizeMode.Zoom
+        pbViewSummary.TabIndex = 1
+        pbViewSummary.TabStop = False
+        ToolTip1.SetToolTip(pbViewSummary, "View Full Summary")
+        ' 
+        ' pbLaptop
+        ' 
+        pbLaptop.Image = CType(resources.GetObject("pbLaptop.Image"), Image)
+        pbLaptop.Location = New Point(0, 4)
+        pbLaptop.Name = "pbLaptop"
+        pbLaptop.Size = New Size(63, 50)
+        pbLaptop.SizeMode = PictureBoxSizeMode.Zoom
+        pbLaptop.TabIndex = 1
+        pbLaptop.TabStop = False
+        ToolTip1.SetToolTip(pbLaptop, "Laptop")
+        ' 
+        ' pbTotal
+        ' 
+        pbTotal.Image = CType(resources.GetObject("pbTotal.Image"), Image)
+        pbTotal.Location = New Point(5, 6)
+        pbTotal.Name = "pbTotal"
+        pbTotal.Size = New Size(47, 45)
+        pbTotal.SizeMode = PictureBoxSizeMode.Zoom
+        pbTotal.TabIndex = 1
+        pbTotal.TabStop = False
+        ToolTip1.SetToolTip(pbTotal, "All")
+        ' 
+        ' pbActive
+        ' 
+        pbActive.Image = CType(resources.GetObject("pbActive.Image"), Image)
+        pbActive.Location = New Point(5, 6)
+        pbActive.Name = "pbActive"
+        pbActive.Size = New Size(47, 45)
+        pbActive.SizeMode = PictureBoxSizeMode.Zoom
+        pbActive.TabIndex = 1
+        pbActive.TabStop = False
+        ToolTip1.SetToolTip(pbActive, "Active")
+        ' 
+        ' pbInactive
+        ' 
+        pbInactive.Image = CType(resources.GetObject("pbInactive.Image"), Image)
+        pbInactive.Location = New Point(5, 6)
+        pbInactive.Name = "pbInactive"
+        pbInactive.Size = New Size(47, 45)
+        pbInactive.SizeMode = PictureBoxSizeMode.Zoom
+        pbInactive.TabIndex = 1
+        pbInactive.TabStop = False
+        ToolTip1.SetToolTip(pbInactive, "Inactive")
+        ' 
+        ' pbDispose
+        ' 
+        pbDispose.Image = CType(resources.GetObject("pbDispose.Image"), Image)
+        pbDispose.Location = New Point(5, 6)
+        pbDispose.Name = "pbDispose"
+        pbDispose.Size = New Size(47, 45)
+        pbDispose.SizeMode = PictureBoxSizeMode.Zoom
+        pbDispose.TabIndex = 1
+        pbDispose.TabStop = False
+        ToolTip1.SetToolTip(pbDispose, "Dispose")
+        ' 
         ' Panel2
         ' 
         Panel2.BackColor = Color.White
         Panel2.Controls.Add(dgAssets)
         Panel2.Location = New Point(23, 97)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(1092, 699)
+        Panel2.Size = New Size(1092, 756)
         Panel2.TabIndex = 7
         ' 
         ' dgAssets
@@ -195,7 +274,7 @@ Partial Class adminForm
         dgAssets.Name = "dgAssets"
         dgAssets.ReadOnly = True
         dgAssets.RowTemplate.Height = 25
-        dgAssets.Size = New Size(1065, 675)
+        dgAssets.Size = New Size(1065, 726)
         dgAssets.TabIndex = 0
         ' 
         ' Panel4
@@ -529,12 +608,24 @@ Partial Class adminForm
         ' Panel5
         ' 
         Panel5.BackColor = Color.White
+        Panel5.Controls.Add(pbClearButton)
         Panel5.Controls.Add(txtSearch)
         Panel5.Controls.Add(btnSearch)
         Panel5.Location = New Point(1121, 97)
         Panel5.Name = "Panel5"
         Panel5.Size = New Size(353, 56)
         Panel5.TabIndex = 9
+        ' 
+        ' pbClearButton
+        ' 
+        pbClearButton.Cursor = Cursors.Hand
+        pbClearButton.Image = CType(resources.GetObject("pbClearButton.Image"), Image)
+        pbClearButton.Location = New Point(221, 17)
+        pbClearButton.Name = "pbClearButton"
+        pbClearButton.Size = New Size(16, 18)
+        pbClearButton.SizeMode = PictureBoxSizeMode.Zoom
+        pbClearButton.TabIndex = 2
+        pbClearButton.TabStop = False
         ' 
         ' txtSearch
         ' 
@@ -560,7 +651,7 @@ Partial Class adminForm
         Panel7.BackColor = Color.White
         Panel7.Controls.Add(lblDesktopNumber)
         Panel7.Controls.Add(PictureBox5)
-        Panel7.Controls.Add(PictureBox2)
+        Panel7.Controls.Add(pbDesktop)
         Panel7.Location = New Point(23, 860)
         Panel7.Name = "Panel7"
         Panel7.Size = New Size(129, 56)
@@ -584,17 +675,6 @@ Partial Class adminForm
         PictureBox5.Size = New Size(100, 50)
         PictureBox5.TabIndex = 4
         PictureBox5.TabStop = False
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(0, 0)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(69, 56)
-        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox2.TabIndex = 1
-        PictureBox2.TabStop = False
-        ToolTip1.SetToolTip(PictureBox2, "Desktop")
         ' 
         ' pnViewSummary
         ' 
@@ -628,23 +708,12 @@ Partial Class adminForm
         PictureBox8.TabIndex = 4
         PictureBox8.TabStop = False
         ' 
-        ' pbViewSummary
-        ' 
-        pbViewSummary.Image = CType(resources.GetObject("pbViewSummary.Image"), Image)
-        pbViewSummary.Location = New Point(0, 6)
-        pbViewSummary.Name = "pbViewSummary"
-        pbViewSummary.Size = New Size(78, 43)
-        pbViewSummary.SizeMode = PictureBoxSizeMode.Zoom
-        pbViewSummary.TabIndex = 1
-        pbViewSummary.TabStop = False
-        ToolTip1.SetToolTip(pbViewSummary, "View Full Summary")
-        ' 
         ' Panel8
         ' 
         Panel8.BackColor = Color.White
         Panel8.Controls.Add(lblLaptopNumber)
         Panel8.Controls.Add(PictureBox3)
-        Panel8.Controls.Add(PictureBox4)
+        Panel8.Controls.Add(pbLaptop)
         Panel8.Location = New Point(158, 859)
         Panel8.Name = "Panel8"
         Panel8.Size = New Size(129, 56)
@@ -669,23 +738,12 @@ Partial Class adminForm
         PictureBox3.TabIndex = 4
         PictureBox3.TabStop = False
         ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(0, 4)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(63, 50)
-        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox4.TabIndex = 1
-        PictureBox4.TabStop = False
-        ToolTip1.SetToolTip(PictureBox4, "Laptop")
-        ' 
         ' Panel9
         ' 
         Panel9.BackColor = Color.White
         Panel9.Controls.Add(lblTotalNumber)
         Panel9.Controls.Add(PictureBox6)
-        Panel9.Controls.Add(PictureBox7)
+        Panel9.Controls.Add(pbTotal)
         Panel9.Location = New Point(293, 859)
         Panel9.Name = "Panel9"
         Panel9.Size = New Size(129, 56)
@@ -710,23 +768,12 @@ Partial Class adminForm
         PictureBox6.TabIndex = 4
         PictureBox6.TabStop = False
         ' 
-        ' PictureBox7
-        ' 
-        PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), Image)
-        PictureBox7.Location = New Point(5, 6)
-        PictureBox7.Name = "PictureBox7"
-        PictureBox7.Size = New Size(47, 45)
-        PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox7.TabIndex = 1
-        PictureBox7.TabStop = False
-        ToolTip1.SetToolTip(PictureBox7, "Total")
-        ' 
         ' Panel11
         ' 
         Panel11.BackColor = Color.White
         Panel11.Controls.Add(lblActiveNumber)
         Panel11.Controls.Add(PictureBox10)
-        Panel11.Controls.Add(PictureBox11)
+        Panel11.Controls.Add(pbActive)
         Panel11.Location = New Point(428, 859)
         Panel11.Name = "Panel11"
         Panel11.Size = New Size(129, 56)
@@ -751,23 +798,12 @@ Partial Class adminForm
         PictureBox10.TabIndex = 4
         PictureBox10.TabStop = False
         ' 
-        ' PictureBox11
-        ' 
-        PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), Image)
-        PictureBox11.Location = New Point(5, 6)
-        PictureBox11.Name = "PictureBox11"
-        PictureBox11.Size = New Size(47, 45)
-        PictureBox11.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox11.TabIndex = 1
-        PictureBox11.TabStop = False
-        ToolTip1.SetToolTip(PictureBox11, "Active")
-        ' 
         ' Panel12
         ' 
         Panel12.BackColor = Color.White
         Panel12.Controls.Add(lblInactiveNumber)
         Panel12.Controls.Add(PictureBox12)
-        Panel12.Controls.Add(PictureBox13)
+        Panel12.Controls.Add(pbInactive)
         Panel12.Location = New Point(563, 859)
         Panel12.Name = "Panel12"
         Panel12.Size = New Size(129, 56)
@@ -792,23 +828,12 @@ Partial Class adminForm
         PictureBox12.TabIndex = 4
         PictureBox12.TabStop = False
         ' 
-        ' PictureBox13
-        ' 
-        PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), Image)
-        PictureBox13.Location = New Point(5, 6)
-        PictureBox13.Name = "PictureBox13"
-        PictureBox13.Size = New Size(47, 45)
-        PictureBox13.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox13.TabIndex = 1
-        PictureBox13.TabStop = False
-        ToolTip1.SetToolTip(PictureBox13, "Inactive")
-        ' 
         ' Panel13
         ' 
         Panel13.BackColor = Color.White
         Panel13.Controls.Add(lblDisposeNumber)
         Panel13.Controls.Add(PictureBox14)
-        Panel13.Controls.Add(PictureBox15)
+        Panel13.Controls.Add(pbDispose)
         Panel13.Location = New Point(698, 859)
         Panel13.Name = "Panel13"
         Panel13.Size = New Size(129, 56)
@@ -832,17 +857,6 @@ Partial Class adminForm
         PictureBox14.Size = New Size(100, 50)
         PictureBox14.TabIndex = 4
         PictureBox14.TabStop = False
-        ' 
-        ' PictureBox15
-        ' 
-        PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), Image)
-        PictureBox15.Location = New Point(5, 6)
-        PictureBox15.Name = "PictureBox15"
-        PictureBox15.Size = New Size(47, 45)
-        PictureBox15.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox15.TabIndex = 1
-        PictureBox15.TabStop = False
-        ToolTip1.SetToolTip(PictureBox15, "Dispose")
         ' 
         ' adminForm
         ' 
@@ -871,40 +885,41 @@ Partial Class adminForm
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
+        CType(pbDesktop, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbViewSummary, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbLaptop, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbTotal, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbActive, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbInactive, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbDispose, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
         CType(dgAssets, ComponentModel.ISupportInitialize).EndInit()
         Panel4.ResumeLayout(False)
         Panel4.PerformLayout()
         Panel5.ResumeLayout(False)
         Panel5.PerformLayout()
+        CType(pbClearButton, ComponentModel.ISupportInitialize).EndInit()
         Panel7.ResumeLayout(False)
         Panel7.PerformLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         pnViewSummary.ResumeLayout(False)
         pnViewSummary.PerformLayout()
         CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
-        CType(pbViewSummary, ComponentModel.ISupportInitialize).EndInit()
         Panel8.ResumeLayout(False)
         Panel8.PerformLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         Panel9.ResumeLayout(False)
         Panel9.PerformLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         Panel11.ResumeLayout(False)
         Panel11.PerformLayout()
         CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox11, ComponentModel.ISupportInitialize).EndInit()
         Panel12.ResumeLayout(False)
         Panel12.PerformLayout()
         CType(PictureBox12, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
         Panel13.ResumeLayout(False)
         Panel13.PerformLayout()
         CType(PictureBox14, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox15, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -950,26 +965,26 @@ Partial Class adminForm
     Friend WithEvents btnSearch As Button
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents pbDesktop As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents pnViewSummary As Panel
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents pbViewSummary As PictureBox
     Friend WithEvents Panel8 As Panel
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents pbLaptop As PictureBox
     Friend WithEvents Panel9 As Panel
     Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents pbTotal As PictureBox
     Friend WithEvents Panel11 As Panel
     Friend WithEvents PictureBox10 As PictureBox
-    Friend WithEvents PictureBox11 As PictureBox
+    Friend WithEvents pbActive As PictureBox
     Friend WithEvents Panel12 As Panel
     Friend WithEvents PictureBox12 As PictureBox
-    Friend WithEvents PictureBox13 As PictureBox
+    Friend WithEvents pbInactive As PictureBox
     Friend WithEvents Panel13 As Panel
     Friend WithEvents PictureBox14 As PictureBox
-    Friend WithEvents PictureBox15 As PictureBox
+    Friend WithEvents pbDispose As PictureBox
     Friend WithEvents lblViewSummary As Label
     Friend WithEvents cbAssetType As ComboBox
     Friend WithEvents lblDesktopNumber As Label
@@ -979,4 +994,5 @@ Partial Class adminForm
     Friend WithEvents lblDisposeNumber As Label
     Friend WithEvents lblInactiveNumber As Label
     Friend WithEvents Label15 As Label
+    Friend WithEvents pbClearButton As PictureBox
 End Class

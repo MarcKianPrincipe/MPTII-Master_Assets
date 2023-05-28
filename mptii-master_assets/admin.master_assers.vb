@@ -520,8 +520,14 @@ Public Class adminForm
             filteredDataTable = dataTable.Copy()
         End If
 
-        ' Bind the filtered data to the DataGridView
-        dgAssets.DataSource = filteredDataTable
+        ' Check if any rows are found
+        If filteredDataTable.Rows.Count > 0 Then
+            ' Bind the filtered data to the DataGridView
+            dgAssets.DataSource = filteredDataTable
+        Else
+            ' Display a custom message when no matching rows are found
+            MessageBox.Show("No results found for the search criteria.")
+        End If
     End Sub
 
     Private Sub dtpPurchaseDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpPurchaseDate.ValueChanged
@@ -548,10 +554,6 @@ Public Class adminForm
         summaryForm.Show()
     End Sub
 
-    Private Sub pnViewSummary_Click(sender As Object, e As EventArgs) Handles pnViewSummary.Click
-        ' Call the OpenNewForm method
-        OpenNewForm(sender, e)
-    End Sub
 
     Private Sub pnViewSummary_Paint(sender As Object, e As PaintEventArgs) Handles pnViewSummary.Paint
         ' Assign the click event handler to the picture box
@@ -561,6 +563,94 @@ Public Class adminForm
         AddHandler lblViewSummary.Click, AddressOf OpenNewForm
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        RefreshData() ' Call the RefreshData function to refresh the data
+    End Sub
 
+    Private Sub pbClearButton_Click(sender As Object, e As EventArgs) Handles pbClearButton.Click
+        txtSearch.Text = String.Empty
+    End Sub
+
+    Private Sub pbDesktop_Click(sender As Object, e As EventArgs) Handles pbDesktop.Click
+        ' Get the original data from the class-level DataTable
+        Dim filteredDataTable As DataTable = dataTable.Clone()
+
+        ' Filter the data to show only desktop asset type
+        For Each row As DataRow In dataTable.Rows
+            Dim cellValue As Object = row("Asset Type")
+            If cellValue IsNot Nothing AndAlso cellValue.ToString() = "Desktop" Then
+                filteredDataTable.ImportRow(row)
+            End If
+        Next
+
+        ' Bind the filtered data to the DataGridView
+        dgAssets.DataSource = filteredDataTable
+    End Sub
+
+    Private Sub pbLaptop_Click(sender As Object, e As EventArgs) Handles pbLaptop.Click
+        ' Get the original data from the class-level DataTable
+        Dim filteredDataTable As DataTable = dataTable.Clone()
+
+        ' Filter the data to show only laptop asset type
+        For Each row As DataRow In dataTable.Rows
+            Dim cellValue As Object = row("Asset Type")
+            If cellValue IsNot Nothing AndAlso cellValue.ToString() = "Laptop" Then
+                filteredDataTable.ImportRow(row)
+            End If
+        Next
+
+        ' Bind the filtered data to the DataGridView
+        dgAssets.DataSource = filteredDataTable
+    End Sub
+
+    Private Sub pbTotal_Click(sender As Object, e As EventArgs) Handles pbTotal.Click
+        ' Bind the original data to the DataGridView
+        dgAssets.DataSource = dataTable
+    End Sub
+
+    Private Sub pbActive_Click(sender As Object, e As EventArgs) Handles pbActive.Click
+        ' Get the active assets from the original data
+        Dim filteredDataTable As DataTable = dataTable.Clone()
+
+        For Each row As DataRow In dataTable.Rows
+            Dim status As String = row("Status").ToString()
+            If status = "Active" Then
+                filteredDataTable.ImportRow(row)
+            End If
+        Next
+
+        ' Bind the filtered data to the DataGridView
+        dgAssets.DataSource = filteredDataTable
+    End Sub
+
+    Private Sub pbInactive_Click(sender As Object, e As EventArgs) Handles pbInactive.Click
+        ' Get the inactive assets from the original data
+        Dim filteredDataTable As DataTable = dataTable.Clone()
+
+        For Each row As DataRow In dataTable.Rows
+            Dim status As String = row("Status").ToString()
+            If status = "Inactive" Then
+                filteredDataTable.ImportRow(row)
+            End If
+        Next
+
+        ' Bind the filtered data to the DataGridView
+        dgAssets.DataSource = filteredDataTable
+    End Sub
+
+    Private Sub pbDispose_Click(sender As Object, e As EventArgs) Handles pbDispose.Click
+        ' Get the active assets from the original data
+        Dim filteredDataTable As DataTable = dataTable.Clone()
+
+        For Each row As DataRow In dataTable.Rows
+            Dim status As String = row("Status").ToString()
+            If status = "Dispose" Then
+                filteredDataTable.ImportRow(row)
+            End If
+        Next
+
+        ' Bind the filtered data to the DataGridView
+        dgAssets.DataSource = filteredDataTable
+    End Sub
 
 End Class
