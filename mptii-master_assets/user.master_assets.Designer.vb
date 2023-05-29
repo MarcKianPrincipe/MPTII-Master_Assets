@@ -283,14 +283,15 @@ Partial Class userForm
         ' 
         ' lblDesktopNumber
         ' 
-        lblDesktopNumber.AutoSize = True
+        lblDesktopNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         lblDesktopNumber.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point)
         lblDesktopNumber.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        lblDesktopNumber.Location = New Point(93, 14)
+        lblDesktopNumber.Location = New Point(82, 14)
         lblDesktopNumber.Name = "lblDesktopNumber"
-        lblDesktopNumber.Size = New Size(32, 37)
+        lblDesktopNumber.Size = New Size(57, 37)
         lblDesktopNumber.TabIndex = 5
         lblDesktopNumber.Text = "0"
+        lblDesktopNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox5
         ' 
@@ -313,14 +314,15 @@ Partial Class userForm
         ' 
         ' lblLaptopNumber
         ' 
-        lblLaptopNumber.AutoSize = True
+        lblLaptopNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         lblLaptopNumber.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point)
         lblLaptopNumber.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        lblLaptopNumber.Location = New Point(93, 14)
+        lblLaptopNumber.Location = New Point(76, 14)
         lblLaptopNumber.Name = "lblLaptopNumber"
-        lblLaptopNumber.Size = New Size(32, 37)
+        lblLaptopNumber.Size = New Size(65, 37)
         lblLaptopNumber.TabIndex = 5
         lblLaptopNumber.Text = "0"
+        lblLaptopNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox3
         ' 
@@ -343,14 +345,15 @@ Partial Class userForm
         ' 
         ' lblTotalNumber
         ' 
-        lblTotalNumber.AutoSize = True
+        lblTotalNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         lblTotalNumber.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point)
         lblTotalNumber.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        lblTotalNumber.Location = New Point(93, 14)
+        lblTotalNumber.Location = New Point(71, 14)
         lblTotalNumber.Name = "lblTotalNumber"
-        lblTotalNumber.Size = New Size(32, 37)
+        lblTotalNumber.Size = New Size(68, 37)
         lblTotalNumber.TabIndex = 5
         lblTotalNumber.Text = "0"
+        lblTotalNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox6
         ' 
@@ -373,14 +376,15 @@ Partial Class userForm
         ' 
         ' lblActiveNumber
         ' 
-        lblActiveNumber.AutoSize = True
+        lblActiveNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         lblActiveNumber.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point)
         lblActiveNumber.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        lblActiveNumber.Location = New Point(93, 14)
+        lblActiveNumber.Location = New Point(73, 14)
         lblActiveNumber.Name = "lblActiveNumber"
-        lblActiveNumber.Size = New Size(32, 37)
+        lblActiveNumber.Size = New Size(66, 37)
         lblActiveNumber.TabIndex = 5
         lblActiveNumber.Text = "0"
+        lblActiveNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox8
         ' 
@@ -403,14 +407,15 @@ Partial Class userForm
         ' 
         ' lblInactiveNumber
         ' 
-        lblInactiveNumber.AutoSize = True
+        lblInactiveNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         lblInactiveNumber.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point)
         lblInactiveNumber.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        lblInactiveNumber.Location = New Point(93, 14)
+        lblInactiveNumber.Location = New Point(72, 14)
         lblInactiveNumber.Name = "lblInactiveNumber"
-        lblInactiveNumber.Size = New Size(32, 37)
+        lblInactiveNumber.Size = New Size(67, 37)
         lblInactiveNumber.TabIndex = 5
         lblInactiveNumber.Text = "0"
+        lblInactiveNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox10
         ' 
@@ -433,14 +438,15 @@ Partial Class userForm
         ' 
         ' lblDisposeNumber
         ' 
-        lblDisposeNumber.AutoSize = True
+        lblDisposeNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
         lblDisposeNumber.Font = New Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point)
         lblDisposeNumber.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        lblDisposeNumber.Location = New Point(93, 14)
+        lblDisposeNumber.Location = New Point(72, 14)
         lblDisposeNumber.Name = "lblDisposeNumber"
-        lblDisposeNumber.Size = New Size(32, 37)
+        lblDisposeNumber.Size = New Size(67, 37)
         lblDisposeNumber.TabIndex = 5
         lblDisposeNumber.Text = "0"
+        lblDisposeNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox12
         ' 
@@ -487,22 +493,16 @@ Partial Class userForm
         Panel4.PerformLayout()
         CType(pbClearButton, ComponentModel.ISupportInitialize).EndInit()
         Panel7.ResumeLayout(False)
-        Panel7.PerformLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         Panel5.ResumeLayout(False)
-        Panel5.PerformLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         Panel6.ResumeLayout(False)
-        Panel6.PerformLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
         Panel8.ResumeLayout(False)
-        Panel8.PerformLayout()
         CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
         Panel9.ResumeLayout(False)
-        Panel9.PerformLayout()
         CType(PictureBox10, ComponentModel.ISupportInitialize).EndInit()
         Panel10.ResumeLayout(False)
-        Panel10.PerformLayout()
         CType(PictureBox12, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
