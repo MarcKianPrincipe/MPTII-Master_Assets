@@ -29,57 +29,57 @@ Partial Class summaryForm
         PictureBox1 = New PictureBox()
         ToolTip1 = New ToolTip(components)
         pnMainBoxDesktop = New Panel()
-        lblTotalNumber = New Label()
+        lblDesktopNumber = New Label()
         PictureBox2 = New PictureBox()
         pnSubBoxDesktop = New Panel()
         Desktop = New Label()
         pnSubBoxLaptop = New Panel()
         Laptop = New Label()
         pnMainBoxLaptop = New Panel()
-        Label2 = New Label()
+        lblLaptopNumber = New Label()
         PictureBox3 = New PictureBox()
         pnSubBoxActive = New Panel()
         Label1 = New Label()
         pnMainBoxActive = New Panel()
-        Label3 = New Label()
+        lblActiveNumber = New Label()
         PictureBox5 = New PictureBox()
         pnSubBoxInactive = New Panel()
         Label5 = New Label()
         pnMainBoxInactive = New Panel()
-        Label6 = New Label()
+        lblInactiveNumber = New Label()
         PictureBox6 = New PictureBox()
         pnSubBoxDispose = New Panel()
         Label7 = New Label()
         pnMainBoxDispose = New Panel()
-        Label8 = New Label()
+        lblDisposeNumber = New Label()
         PictureBox7 = New PictureBox()
         Panel2 = New Panel()
-        PictureBox9 = New PictureBox()
-        PictureBox8 = New PictureBox()
+        pbRefresh = New PictureBox()
+        pbBack = New PictureBox()
         Panel3 = New Panel()
         pnSubBoxTotal = New Panel()
         Label18 = New Label()
         pnMainBoxTotal = New Panel()
-        Label4 = New Label()
+        lblTotalNumber = New Label()
         PictureBox4 = New PictureBox()
         Panel4 = New Panel()
         pnMainBoxLenovo = New Panel()
-        Label15 = New Label()
+        lblLenovoNumber = New Label()
         PictureBox19 = New PictureBox()
         pnMainBoxDell = New Panel()
-        Label14 = New Label()
+        lblDellNumber = New Label()
         PictureBox18 = New PictureBox()
         pnMainBoxAcer = New Panel()
-        Label10 = New Label()
+        lblAcerNumber = New Label()
         PictureBox17 = New PictureBox()
         pnMainBoxHR = New Panel()
-        Label11 = New Label()
+        lblHRNumber = New Label()
         PictureBox10 = New PictureBox()
         pnSubBoxHR = New Panel()
         Label9 = New Label()
         Panel7 = New Panel()
         pnMainBoxCreative = New Panel()
-        Label37 = New Label()
+        lblCreativeNumber = New Label()
         Label30 = New Label()
         Label31 = New Label()
         Label32 = New Label()
@@ -87,27 +87,27 @@ Partial Class summaryForm
         pnSubBoxCreative = New Panel()
         Label33 = New Label()
         pnMainBoxFinance = New Panel()
-        Label36 = New Label()
+        lblFinanceNumber = New Label()
         PictureBox15 = New PictureBox()
         pnSubBoxFinance = New Panel()
         Label29 = New Label()
         pnMainBoxAccounting = New Panel()
-        Label35 = New Label()
+        lblAccountingNumber = New Label()
         PictureBox14 = New PictureBox()
         pnSubBoxAccounting = New Panel()
         Label25 = New Label()
         pnMainBoxSales = New Panel()
-        Label34 = New Label()
+        lblSalesNumber = New Label()
         PictureBox13 = New PictureBox()
         pnSubBoxSales = New Panel()
         Label21 = New Label()
         pnMainBoxMarketing = New Panel()
-        Label17 = New Label()
+        lblMarketingNumber = New Label()
         PictureBox12 = New PictureBox()
         pnSubBoxMarketing = New Panel()
         Label16 = New Label()
         pnMainBoxIT = New Panel()
-        Label13 = New Label()
+        lblITNumber = New Label()
         PictureBox11 = New PictureBox()
         pnSubBoxIT = New Panel()
         Label12 = New Label()
@@ -121,11 +121,11 @@ Partial Class summaryForm
         pnSubBox3Below = New Panel()
         Label24 = New Label()
         pnMainBox3Below = New Panel()
-        Label20 = New Label()
+        lblBelowYears = New Label()
         pnMainBoxBetween = New Panel()
-        Label22 = New Label()
+        lblBetweenYears = New Label()
         pnMainBox5Above = New Panel()
-        Label23 = New Label()
+        lblAboveYears = New Label()
         Panel1.SuspendLayout()
         CType(pictureAccount, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -145,8 +145,8 @@ Partial Class summaryForm
         pnMainBoxDispose.SuspendLayout()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbRefresh, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pbBack, ComponentModel.ISupportInitialize).BeginInit()
         Panel3.SuspendLayout()
         pnSubBoxTotal.SuspendLayout()
         pnMainBoxTotal.SuspendLayout()
@@ -202,6 +202,7 @@ Partial Class summaryForm
         ' 
         ' pictureAccount
         ' 
+        pictureAccount.Cursor = Cursors.Hand
         pictureAccount.Image = CType(resources.GetObject("pictureAccount.Image"), Image)
         pictureAccount.Location = New Point(1423, 26)
         pictureAccount.Name = "pictureAccount"
@@ -224,26 +225,26 @@ Partial Class summaryForm
         ' pnMainBoxDesktop
         ' 
         pnMainBoxDesktop.BackColor = Color.White
-        pnMainBoxDesktop.Controls.Add(lblTotalNumber)
+        pnMainBoxDesktop.Controls.Add(lblDesktopNumber)
         pnMainBoxDesktop.Controls.Add(PictureBox2)
         pnMainBoxDesktop.Location = New Point(268, 26)
         pnMainBoxDesktop.Name = "pnMainBoxDesktop"
         pnMainBoxDesktop.Size = New Size(228, 115)
         pnMainBoxDesktop.TabIndex = 5
         ' 
-        ' lblTotalNumber
+        ' lblDesktopNumber
         ' 
-        lblTotalNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        lblTotalNumber.BackColor = Color.Transparent
-        lblTotalNumber.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
-        lblTotalNumber.ForeColor = Color.Black
-        lblTotalNumber.Location = New Point(0, 62)
-        lblTotalNumber.Margin = New Padding(0)
-        lblTotalNumber.Name = "lblTotalNumber"
-        lblTotalNumber.Size = New Size(228, 40)
-        lblTotalNumber.TabIndex = 6
-        lblTotalNumber.Text = "0"
-        lblTotalNumber.TextAlign = ContentAlignment.MiddleCenter
+        lblDesktopNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblDesktopNumber.BackColor = Color.Transparent
+        lblDesktopNumber.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        lblDesktopNumber.ForeColor = Color.Black
+        lblDesktopNumber.Location = New Point(0, 62)
+        lblDesktopNumber.Margin = New Padding(0)
+        lblDesktopNumber.Name = "lblDesktopNumber"
+        lblDesktopNumber.Size = New Size(228, 40)
+        lblDesktopNumber.TabIndex = 6
+        lblDesktopNumber.Text = "0"
+        lblDesktopNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox2
         ' 
@@ -302,26 +303,26 @@ Partial Class summaryForm
         ' pnMainBoxLaptop
         ' 
         pnMainBoxLaptop.BackColor = Color.White
-        pnMainBoxLaptop.Controls.Add(Label2)
+        pnMainBoxLaptop.Controls.Add(lblLaptopNumber)
         pnMainBoxLaptop.Controls.Add(PictureBox3)
         pnMainBoxLaptop.Location = New Point(502, 26)
         pnMainBoxLaptop.Name = "pnMainBoxLaptop"
         pnMainBoxLaptop.Size = New Size(228, 115)
         pnMainBoxLaptop.TabIndex = 7
         ' 
-        ' Label2
+        ' lblLaptopNumber
         ' 
-        Label2.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.ForeColor = Color.Black
-        Label2.Location = New Point(0, 62)
-        Label2.Margin = New Padding(0)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(228, 40)
-        Label2.TabIndex = 6
-        Label2.Text = "0"
-        Label2.TextAlign = ContentAlignment.MiddleCenter
+        lblLaptopNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblLaptopNumber.BackColor = Color.Transparent
+        lblLaptopNumber.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        lblLaptopNumber.ForeColor = Color.Black
+        lblLaptopNumber.Location = New Point(0, 62)
+        lblLaptopNumber.Margin = New Padding(0)
+        lblLaptopNumber.Name = "lblLaptopNumber"
+        lblLaptopNumber.Size = New Size(228, 40)
+        lblLaptopNumber.TabIndex = 6
+        lblLaptopNumber.Text = "0"
+        lblLaptopNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox3
         ' 
@@ -358,27 +359,27 @@ Partial Class summaryForm
         ' pnMainBoxActive
         ' 
         pnMainBoxActive.BackColor = Color.White
-        pnMainBoxActive.Controls.Add(Label3)
+        pnMainBoxActive.Controls.Add(lblActiveNumber)
         pnMainBoxActive.Controls.Add(PictureBox5)
         pnMainBoxActive.Location = New Point(757, 26)
         pnMainBoxActive.Name = "pnMainBoxActive"
         pnMainBoxActive.Size = New Size(228, 115)
         pnMainBoxActive.TabIndex = 11
         ' 
-        ' Label3
+        ' lblActiveNumber
         ' 
-        Label3.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.ForeColor = Color.Black
-        Label3.Location = New Point(0, 62)
-        Label3.Margin = New Padding(0)
-        Label3.Name = "Label3"
-        Label3.Padding = New Padding(10, 0, 10, 0)
-        Label3.Size = New Size(228, 40)
-        Label3.TabIndex = 6
-        Label3.Text = "0"
-        Label3.TextAlign = ContentAlignment.MiddleCenter
+        lblActiveNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblActiveNumber.BackColor = Color.Transparent
+        lblActiveNumber.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        lblActiveNumber.ForeColor = Color.Black
+        lblActiveNumber.Location = New Point(0, 62)
+        lblActiveNumber.Margin = New Padding(0)
+        lblActiveNumber.Name = "lblActiveNumber"
+        lblActiveNumber.Padding = New Padding(10, 0, 10, 0)
+        lblActiveNumber.Size = New Size(228, 40)
+        lblActiveNumber.TabIndex = 6
+        lblActiveNumber.Text = "0"
+        lblActiveNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox5
         ' 
@@ -415,26 +416,26 @@ Partial Class summaryForm
         ' pnMainBoxInactive
         ' 
         pnMainBoxInactive.BackColor = Color.White
-        pnMainBoxInactive.Controls.Add(Label6)
+        pnMainBoxInactive.Controls.Add(lblInactiveNumber)
         pnMainBoxInactive.Controls.Add(PictureBox6)
         pnMainBoxInactive.Location = New Point(991, 26)
         pnMainBoxInactive.Name = "pnMainBoxInactive"
         pnMainBoxInactive.Size = New Size(228, 115)
         pnMainBoxInactive.TabIndex = 13
         ' 
-        ' Label6
+        ' lblInactiveNumber
         ' 
-        Label6.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label6.BackColor = Color.Transparent
-        Label6.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label6.ForeColor = Color.Black
-        Label6.Location = New Point(0, 62)
-        Label6.Margin = New Padding(0)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(228, 40)
-        Label6.TabIndex = 6
-        Label6.Text = "0"
-        Label6.TextAlign = ContentAlignment.MiddleCenter
+        lblInactiveNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblInactiveNumber.BackColor = Color.Transparent
+        lblInactiveNumber.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        lblInactiveNumber.ForeColor = Color.Black
+        lblInactiveNumber.Location = New Point(0, 62)
+        lblInactiveNumber.Margin = New Padding(0)
+        lblInactiveNumber.Name = "lblInactiveNumber"
+        lblInactiveNumber.Size = New Size(228, 40)
+        lblInactiveNumber.TabIndex = 6
+        lblInactiveNumber.Text = "0"
+        lblInactiveNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox6
         ' 
@@ -471,26 +472,26 @@ Partial Class summaryForm
         ' pnMainBoxDispose
         ' 
         pnMainBoxDispose.BackColor = Color.White
-        pnMainBoxDispose.Controls.Add(Label8)
+        pnMainBoxDispose.Controls.Add(lblDisposeNumber)
         pnMainBoxDispose.Controls.Add(PictureBox7)
         pnMainBoxDispose.Location = New Point(1225, 26)
         pnMainBoxDispose.Name = "pnMainBoxDispose"
         pnMainBoxDispose.Size = New Size(228, 115)
         pnMainBoxDispose.TabIndex = 15
         ' 
-        ' Label8
+        ' lblDisposeNumber
         ' 
-        Label8.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label8.BackColor = Color.Transparent
-        Label8.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label8.ForeColor = Color.Black
-        Label8.Location = New Point(0, 62)
-        Label8.Margin = New Padding(0)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(228, 40)
-        Label8.TabIndex = 6
-        Label8.Text = "0"
-        Label8.TextAlign = ContentAlignment.MiddleCenter
+        lblDisposeNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblDisposeNumber.BackColor = Color.Transparent
+        lblDisposeNumber.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        lblDisposeNumber.ForeColor = Color.Black
+        lblDisposeNumber.Location = New Point(0, 62)
+        lblDisposeNumber.Margin = New Padding(0)
+        lblDisposeNumber.Name = "lblDisposeNumber"
+        lblDisposeNumber.Size = New Size(228, 40)
+        lblDisposeNumber.TabIndex = 6
+        lblDisposeNumber.Text = "0"
+        lblDisposeNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox7
         ' 
@@ -505,32 +506,36 @@ Partial Class summaryForm
         ' Panel2
         ' 
         Panel2.BackColor = Color.White
-        Panel2.Controls.Add(PictureBox9)
-        Panel2.Controls.Add(PictureBox8)
+        Panel2.Controls.Add(pbRefresh)
+        Panel2.Controls.Add(pbBack)
         Panel2.Location = New Point(12, 97)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(1476, 44)
         Panel2.TabIndex = 17
         ' 
-        ' PictureBox9
+        ' pbRefresh
         ' 
-        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
-        PictureBox9.Location = New Point(48, 9)
-        PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(46, 24)
-        PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox9.TabIndex = 1
-        PictureBox9.TabStop = False
+        pbRefresh.Cursor = Cursors.Hand
+        pbRefresh.Image = CType(resources.GetObject("pbRefresh.Image"), Image)
+        pbRefresh.Location = New Point(48, 9)
+        pbRefresh.Name = "pbRefresh"
+        pbRefresh.Size = New Size(46, 24)
+        pbRefresh.SizeMode = PictureBoxSizeMode.Zoom
+        pbRefresh.TabIndex = 1
+        pbRefresh.TabStop = False
+        ToolTip1.SetToolTip(pbRefresh, "Refresh")
         ' 
-        ' PictureBox8
+        ' pbBack
         ' 
-        PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
-        PictureBox8.Location = New Point(13, 9)
-        PictureBox8.Name = "PictureBox8"
-        PictureBox8.Size = New Size(41, 24)
-        PictureBox8.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox8.TabIndex = 0
-        PictureBox8.TabStop = False
+        pbBack.Cursor = Cursors.Hand
+        pbBack.Image = CType(resources.GetObject("pbBack.Image"), Image)
+        pbBack.Location = New Point(13, 9)
+        pbBack.Name = "pbBack"
+        pbBack.Size = New Size(41, 24)
+        pbBack.SizeMode = PictureBoxSizeMode.Zoom
+        pbBack.TabIndex = 0
+        pbBack.TabStop = False
+        ToolTip1.SetToolTip(pbBack, "Back to Admin")
         ' 
         ' Panel3
         ' 
@@ -571,32 +576,32 @@ Partial Class summaryForm
         Label18.Name = "Label18"
         Label18.Size = New Size(228, 21)
         Label18.TabIndex = 7
-        Label18.Text = "DESKTOP"
+        Label18.Text = "ALL"
         Label18.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' pnMainBoxTotal
         ' 
         pnMainBoxTotal.BackColor = Color.White
-        pnMainBoxTotal.Controls.Add(Label4)
+        pnMainBoxTotal.Controls.Add(lblTotalNumber)
         pnMainBoxTotal.Controls.Add(PictureBox4)
         pnMainBoxTotal.Location = New Point(34, 26)
         pnMainBoxTotal.Name = "pnMainBoxTotal"
         pnMainBoxTotal.Size = New Size(228, 115)
         pnMainBoxTotal.TabIndex = 7
         ' 
-        ' Label4
+        ' lblTotalNumber
         ' 
-        Label4.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label4.BackColor = Color.Transparent
-        Label4.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.ForeColor = Color.Black
-        Label4.Location = New Point(-12, 68)
-        Label4.Margin = New Padding(0)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(240, 40)
-        Label4.TabIndex = 6
-        Label4.Text = "0"
-        Label4.TextAlign = ContentAlignment.MiddleCenter
+        lblTotalNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblTotalNumber.BackColor = Color.Transparent
+        lblTotalNumber.Font = New Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point)
+        lblTotalNumber.ForeColor = Color.Black
+        lblTotalNumber.Location = New Point(3, 68)
+        lblTotalNumber.Margin = New Padding(0)
+        lblTotalNumber.Name = "lblTotalNumber"
+        lblTotalNumber.Size = New Size(225, 40)
+        lblTotalNumber.TabIndex = 6
+        lblTotalNumber.Text = "0"
+        lblTotalNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox4
         ' 
@@ -621,26 +626,26 @@ Partial Class summaryForm
         ' 
         ' pnMainBoxLenovo
         ' 
-        pnMainBoxLenovo.Controls.Add(Label15)
+        pnMainBoxLenovo.Controls.Add(lblLenovoNumber)
         pnMainBoxLenovo.Controls.Add(PictureBox19)
         pnMainBoxLenovo.Location = New Point(507, 21)
         pnMainBoxLenovo.Name = "pnMainBoxLenovo"
         pnMainBoxLenovo.Size = New Size(198, 203)
         pnMainBoxLenovo.TabIndex = 9
         ' 
-        ' Label15
+        ' lblLenovoNumber
         ' 
-        Label15.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label15.BackColor = Color.Transparent
-        Label15.Font = New Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point)
-        Label15.ForeColor = Color.Black
-        Label15.Location = New Point(0, 126)
-        Label15.Margin = New Padding(0)
-        Label15.Name = "Label15"
-        Label15.Size = New Size(192, 40)
-        Label15.TabIndex = 9
-        Label15.Text = "0"
-        Label15.TextAlign = ContentAlignment.MiddleCenter
+        lblLenovoNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblLenovoNumber.BackColor = Color.Transparent
+        lblLenovoNumber.Font = New Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblLenovoNumber.ForeColor = Color.Black
+        lblLenovoNumber.Location = New Point(3, 126)
+        lblLenovoNumber.Margin = New Padding(0)
+        lblLenovoNumber.Name = "lblLenovoNumber"
+        lblLenovoNumber.Size = New Size(192, 40)
+        lblLenovoNumber.TabIndex = 9
+        lblLenovoNumber.Text = "0"
+        lblLenovoNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox19
         ' 
@@ -654,26 +659,26 @@ Partial Class summaryForm
         ' 
         ' pnMainBoxDell
         ' 
-        pnMainBoxDell.Controls.Add(Label14)
+        pnMainBoxDell.Controls.Add(lblDellNumber)
         pnMainBoxDell.Controls.Add(PictureBox18)
         pnMainBoxDell.Location = New Point(273, 21)
         pnMainBoxDell.Name = "pnMainBoxDell"
         pnMainBoxDell.Size = New Size(198, 203)
         pnMainBoxDell.TabIndex = 8
         ' 
-        ' Label14
+        ' lblDellNumber
         ' 
-        Label14.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label14.BackColor = Color.Transparent
-        Label14.Font = New Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point)
-        Label14.ForeColor = Color.Black
-        Label14.Location = New Point(3, 126)
-        Label14.Margin = New Padding(0)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(192, 40)
-        Label14.TabIndex = 8
-        Label14.Text = "0"
-        Label14.TextAlign = ContentAlignment.MiddleCenter
+        lblDellNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblDellNumber.BackColor = Color.Transparent
+        lblDellNumber.Font = New Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblDellNumber.ForeColor = Color.Black
+        lblDellNumber.Location = New Point(3, 126)
+        lblDellNumber.Margin = New Padding(0)
+        lblDellNumber.Name = "lblDellNumber"
+        lblDellNumber.Size = New Size(192, 40)
+        lblDellNumber.TabIndex = 8
+        lblDellNumber.Text = "0"
+        lblDellNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox18
         ' 
@@ -687,26 +692,26 @@ Partial Class summaryForm
         ' 
         ' pnMainBoxAcer
         ' 
-        pnMainBoxAcer.Controls.Add(Label10)
+        pnMainBoxAcer.Controls.Add(lblAcerNumber)
         pnMainBoxAcer.Controls.Add(PictureBox17)
         pnMainBoxAcer.Location = New Point(36, 21)
         pnMainBoxAcer.Name = "pnMainBoxAcer"
         pnMainBoxAcer.Size = New Size(198, 203)
         pnMainBoxAcer.TabIndex = 7
         ' 
-        ' Label10
+        ' lblAcerNumber
         ' 
-        Label10.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label10.BackColor = Color.Transparent
-        Label10.Font = New Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point)
-        Label10.ForeColor = Color.Black
-        Label10.Location = New Point(3, 126)
-        Label10.Margin = New Padding(0)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(192, 40)
-        Label10.TabIndex = 7
-        Label10.Text = "0"
-        Label10.TextAlign = ContentAlignment.MiddleCenter
+        lblAcerNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblAcerNumber.BackColor = Color.Transparent
+        lblAcerNumber.Font = New Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblAcerNumber.ForeColor = Color.Black
+        lblAcerNumber.Location = New Point(3, 126)
+        lblAcerNumber.Margin = New Padding(0)
+        lblAcerNumber.Name = "lblAcerNumber"
+        lblAcerNumber.Size = New Size(192, 40)
+        lblAcerNumber.TabIndex = 7
+        lblAcerNumber.Text = "0"
+        lblAcerNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox17
         ' 
@@ -721,23 +726,23 @@ Partial Class summaryForm
         ' pnMainBoxHR
         ' 
         pnMainBoxHR.BackColor = Color.White
-        pnMainBoxHR.Controls.Add(Label11)
+        pnMainBoxHR.Controls.Add(lblHRNumber)
         pnMainBoxHR.Controls.Add(PictureBox10)
         pnMainBoxHR.Location = New Point(34, 23)
         pnMainBoxHR.Name = "pnMainBoxHR"
         pnMainBoxHR.Size = New Size(186, 70)
         pnMainBoxHR.TabIndex = 21
         ' 
-        ' Label11
+        ' lblHRNumber
         ' 
-        Label11.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label11.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
-        Label11.Location = New Point(76, 19)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(105, 30)
-        Label11.TabIndex = 23
-        Label11.Text = "0"
-        Label11.TextAlign = ContentAlignment.MiddleCenter
+        lblHRNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblHRNumber.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblHRNumber.Location = New Point(76, 19)
+        lblHRNumber.Name = "lblHRNumber"
+        lblHRNumber.Size = New Size(105, 30)
+        lblHRNumber.TabIndex = 23
+        lblHRNumber.Text = "0"
+        lblHRNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox10
         ' 
@@ -796,7 +801,7 @@ Partial Class summaryForm
         ' pnMainBoxCreative
         ' 
         pnMainBoxCreative.BackColor = Color.White
-        pnMainBoxCreative.Controls.Add(Label37)
+        pnMainBoxCreative.Controls.Add(lblCreativeNumber)
         pnMainBoxCreative.Controls.Add(Label30)
         pnMainBoxCreative.Controls.Add(Label31)
         pnMainBoxCreative.Controls.Add(Label32)
@@ -806,16 +811,16 @@ Partial Class summaryForm
         pnMainBoxCreative.Size = New Size(186, 70)
         pnMainBoxCreative.TabIndex = 34
         ' 
-        ' Label37
+        ' lblCreativeNumber
         ' 
-        Label37.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label37.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
-        Label37.Location = New Point(76, 19)
-        Label37.Name = "Label37"
-        Label37.Size = New Size(105, 30)
-        Label37.TabIndex = 29
-        Label37.Text = "0"
-        Label37.TextAlign = ContentAlignment.MiddleCenter
+        lblCreativeNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblCreativeNumber.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblCreativeNumber.Location = New Point(76, 19)
+        lblCreativeNumber.Name = "lblCreativeNumber"
+        lblCreativeNumber.Size = New Size(105, 30)
+        lblCreativeNumber.TabIndex = 29
+        lblCreativeNumber.Text = "0"
+        lblCreativeNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label30
         ' 
@@ -885,23 +890,23 @@ Partial Class summaryForm
         ' pnMainBoxFinance
         ' 
         pnMainBoxFinance.BackColor = Color.White
-        pnMainBoxFinance.Controls.Add(Label36)
+        pnMainBoxFinance.Controls.Add(lblFinanceNumber)
         pnMainBoxFinance.Controls.Add(PictureBox15)
         pnMainBoxFinance.Location = New Point(1062, 23)
         pnMainBoxFinance.Name = "pnMainBoxFinance"
         pnMainBoxFinance.Size = New Size(186, 70)
         pnMainBoxFinance.TabIndex = 32
         ' 
-        ' Label36
+        ' lblFinanceNumber
         ' 
-        Label36.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label36.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
-        Label36.Location = New Point(76, 19)
-        Label36.Name = "Label36"
-        Label36.Size = New Size(105, 30)
-        Label36.TabIndex = 28
-        Label36.Text = "0"
-        Label36.TextAlign = ContentAlignment.MiddleCenter
+        lblFinanceNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblFinanceNumber.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblFinanceNumber.Location = New Point(76, 19)
+        lblFinanceNumber.Name = "lblFinanceNumber"
+        lblFinanceNumber.Size = New Size(105, 30)
+        lblFinanceNumber.TabIndex = 28
+        lblFinanceNumber.Text = "0"
+        lblFinanceNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox15
         ' 
@@ -938,23 +943,23 @@ Partial Class summaryForm
         ' pnMainBoxAccounting
         ' 
         pnMainBoxAccounting.BackColor = Color.White
-        pnMainBoxAccounting.Controls.Add(Label35)
+        pnMainBoxAccounting.Controls.Add(lblAccountingNumber)
         pnMainBoxAccounting.Controls.Add(PictureBox14)
         pnMainBoxAccounting.Location = New Point(854, 23)
         pnMainBoxAccounting.Name = "pnMainBoxAccounting"
         pnMainBoxAccounting.Size = New Size(186, 70)
         pnMainBoxAccounting.TabIndex = 30
         ' 
-        ' Label35
+        ' lblAccountingNumber
         ' 
-        Label35.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label35.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
-        Label35.Location = New Point(76, 19)
-        Label35.Name = "Label35"
-        Label35.Size = New Size(105, 30)
-        Label35.TabIndex = 27
-        Label35.Text = "0"
-        Label35.TextAlign = ContentAlignment.MiddleCenter
+        lblAccountingNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblAccountingNumber.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblAccountingNumber.Location = New Point(76, 19)
+        lblAccountingNumber.Name = "lblAccountingNumber"
+        lblAccountingNumber.Size = New Size(105, 30)
+        lblAccountingNumber.TabIndex = 27
+        lblAccountingNumber.Text = "0"
+        lblAccountingNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox14
         ' 
@@ -991,23 +996,23 @@ Partial Class summaryForm
         ' pnMainBoxSales
         ' 
         pnMainBoxSales.BackColor = Color.White
-        pnMainBoxSales.Controls.Add(Label34)
+        pnMainBoxSales.Controls.Add(lblSalesNumber)
         pnMainBoxSales.Controls.Add(PictureBox13)
         pnMainBoxSales.Location = New Point(647, 23)
         pnMainBoxSales.Name = "pnMainBoxSales"
         pnMainBoxSales.Size = New Size(186, 70)
         pnMainBoxSales.TabIndex = 28
         ' 
-        ' Label34
+        ' lblSalesNumber
         ' 
-        Label34.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label34.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
-        Label34.Location = New Point(76, 19)
-        Label34.Name = "Label34"
-        Label34.Size = New Size(105, 30)
-        Label34.TabIndex = 26
-        Label34.Text = "0"
-        Label34.TextAlign = ContentAlignment.MiddleCenter
+        lblSalesNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblSalesNumber.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblSalesNumber.Location = New Point(76, 19)
+        lblSalesNumber.Name = "lblSalesNumber"
+        lblSalesNumber.Size = New Size(105, 30)
+        lblSalesNumber.TabIndex = 26
+        lblSalesNumber.Text = "0"
+        lblSalesNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox13
         ' 
@@ -1044,23 +1049,23 @@ Partial Class summaryForm
         ' pnMainBoxMarketing
         ' 
         pnMainBoxMarketing.BackColor = Color.White
-        pnMainBoxMarketing.Controls.Add(Label17)
+        pnMainBoxMarketing.Controls.Add(lblMarketingNumber)
         pnMainBoxMarketing.Controls.Add(PictureBox12)
         pnMainBoxMarketing.Location = New Point(442, 23)
         pnMainBoxMarketing.Name = "pnMainBoxMarketing"
         pnMainBoxMarketing.Size = New Size(186, 70)
         pnMainBoxMarketing.TabIndex = 26
         ' 
-        ' Label17
+        ' lblMarketingNumber
         ' 
-        Label17.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label17.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
-        Label17.Location = New Point(76, 19)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(105, 30)
-        Label17.TabIndex = 25
-        Label17.Text = "0"
-        Label17.TextAlign = ContentAlignment.MiddleCenter
+        lblMarketingNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblMarketingNumber.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblMarketingNumber.Location = New Point(76, 19)
+        lblMarketingNumber.Name = "lblMarketingNumber"
+        lblMarketingNumber.Size = New Size(105, 30)
+        lblMarketingNumber.TabIndex = 25
+        lblMarketingNumber.Text = "0"
+        lblMarketingNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox12
         ' 
@@ -1097,23 +1102,23 @@ Partial Class summaryForm
         ' pnMainBoxIT
         ' 
         pnMainBoxIT.BackColor = Color.White
-        pnMainBoxIT.Controls.Add(Label13)
+        pnMainBoxIT.Controls.Add(lblITNumber)
         pnMainBoxIT.Controls.Add(PictureBox11)
         pnMainBoxIT.Location = New Point(237, 23)
         pnMainBoxIT.Name = "pnMainBoxIT"
         pnMainBoxIT.Size = New Size(186, 70)
         pnMainBoxIT.TabIndex = 24
         ' 
-        ' Label13
+        ' lblITNumber
         ' 
-        Label13.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label13.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
-        Label13.Location = New Point(76, 19)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(105, 30)
-        Label13.TabIndex = 24
-        Label13.Text = "0"
-        Label13.TextAlign = ContentAlignment.MiddleCenter
+        lblITNumber.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblITNumber.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point)
+        lblITNumber.Location = New Point(76, 19)
+        lblITNumber.Name = "lblITNumber"
+        lblITNumber.Size = New Size(105, 30)
+        lblITNumber.TabIndex = 24
+        lblITNumber.Text = "0"
+        lblITNumber.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' PictureBox11
         ' 
@@ -1242,69 +1247,69 @@ Partial Class summaryForm
         ' 
         ' pnMainBox3Below
         ' 
-        pnMainBox3Below.Controls.Add(Label20)
+        pnMainBox3Below.Controls.Add(lblBelowYears)
         pnMainBox3Below.Location = New Point(34, 70)
         pnMainBox3Below.Name = "pnMainBox3Below"
         pnMainBox3Below.Size = New Size(198, 154)
         pnMainBox3Below.TabIndex = 9
         ' 
-        ' Label20
+        ' lblBelowYears
         ' 
-        Label20.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label20.BackColor = Color.Transparent
-        Label20.Font = New Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
-        Label20.ForeColor = Color.Black
-        Label20.Location = New Point(3, 52)
-        Label20.Margin = New Padding(0)
-        Label20.Name = "Label20"
-        Label20.Size = New Size(197, 40)
-        Label20.TabIndex = 8
-        Label20.Text = "0"
-        Label20.TextAlign = ContentAlignment.MiddleCenter
+        lblBelowYears.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblBelowYears.BackColor = Color.Transparent
+        lblBelowYears.Font = New Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
+        lblBelowYears.ForeColor = Color.Black
+        lblBelowYears.Location = New Point(3, 52)
+        lblBelowYears.Margin = New Padding(0)
+        lblBelowYears.Name = "lblBelowYears"
+        lblBelowYears.Size = New Size(197, 40)
+        lblBelowYears.TabIndex = 8
+        lblBelowYears.Text = "0"
+        lblBelowYears.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' pnMainBoxBetween
         ' 
-        pnMainBoxBetween.Controls.Add(Label22)
+        pnMainBoxBetween.Controls.Add(lblBetweenYears)
         pnMainBoxBetween.Location = New Point(267, 70)
         pnMainBoxBetween.Name = "pnMainBoxBetween"
         pnMainBoxBetween.Size = New Size(198, 154)
         pnMainBoxBetween.TabIndex = 9
         ' 
-        ' Label22
+        ' lblBetweenYears
         ' 
-        Label22.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label22.BackColor = Color.Transparent
-        Label22.Font = New Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
-        Label22.ForeColor = Color.Black
-        Label22.Location = New Point(1, 52)
-        Label22.Margin = New Padding(0)
-        Label22.Name = "Label22"
-        Label22.Size = New Size(197, 40)
-        Label22.TabIndex = 7
-        Label22.Text = "0"
-        Label22.TextAlign = ContentAlignment.MiddleCenter
+        lblBetweenYears.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblBetweenYears.BackColor = Color.Transparent
+        lblBetweenYears.Font = New Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
+        lblBetweenYears.ForeColor = Color.Black
+        lblBetweenYears.Location = New Point(1, 52)
+        lblBetweenYears.Margin = New Padding(0)
+        lblBetweenYears.Name = "lblBetweenYears"
+        lblBetweenYears.Size = New Size(197, 40)
+        lblBetweenYears.TabIndex = 7
+        lblBetweenYears.Text = "0"
+        lblBetweenYears.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' pnMainBox5Above
         ' 
-        pnMainBox5Above.Controls.Add(Label23)
+        pnMainBox5Above.Controls.Add(lblAboveYears)
         pnMainBox5Above.Location = New Point(499, 70)
         pnMainBox5Above.Name = "pnMainBox5Above"
         pnMainBox5Above.Size = New Size(198, 154)
         pnMainBox5Above.TabIndex = 8
         ' 
-        ' Label23
+        ' lblAboveYears
         ' 
-        Label23.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        Label23.BackColor = Color.Transparent
-        Label23.Font = New Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
-        Label23.ForeColor = Color.Black
-        Label23.Location = New Point(1, 52)
-        Label23.Margin = New Padding(0)
-        Label23.Name = "Label23"
-        Label23.Size = New Size(197, 40)
-        Label23.TabIndex = 8
-        Label23.Text = "0"
-        Label23.TextAlign = ContentAlignment.MiddleCenter
+        lblAboveYears.Anchor = AnchorStyles.Left Or AnchorStyles.Right
+        lblAboveYears.BackColor = Color.Transparent
+        lblAboveYears.Font = New Font("Segoe UI Semibold", 26.25F, FontStyle.Bold, GraphicsUnit.Point)
+        lblAboveYears.ForeColor = Color.Black
+        lblAboveYears.Location = New Point(1, 52)
+        lblAboveYears.Margin = New Padding(0)
+        lblAboveYears.Name = "lblAboveYears"
+        lblAboveYears.Size = New Size(197, 40)
+        lblAboveYears.TabIndex = 8
+        lblAboveYears.Text = "0"
+        lblAboveYears.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' summaryForm
         ' 
@@ -1342,8 +1347,8 @@ Partial Class summaryForm
         pnMainBoxDispose.ResumeLayout(False)
         CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
-        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbRefresh, ComponentModel.ISupportInitialize).EndInit()
+        CType(pbBack, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
         pnSubBoxTotal.ResumeLayout(False)
         pnMainBoxTotal.ResumeLayout(False)
@@ -1396,51 +1401,51 @@ Partial Class summaryForm
     Friend WithEvents pnMainBoxDesktop As Panel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents pnSubBoxDesktop As Panel
-    Friend WithEvents lblTotalNumber As Label
+    Friend WithEvents lblDesktopNumber As Label
     Friend WithEvents Desktop As Label
     Friend WithEvents pnSubBoxLaptop As Panel
     Friend WithEvents Laptop As Label
     Friend WithEvents pnMainBoxLaptop As Panel
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lblLaptopNumber As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents pnSubBoxTotal As Panel
     Friend WithEvents Total As Label
     Friend WithEvents pnSubBoxActive As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents pnMainBoxActive As Panel
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblActiveNumber As Label
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents pnSubBoxInactive As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents pnMainBoxInactive As Panel
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lblInactiveNumber As Label
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents pnSubBoxDispose As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents pnMainBoxDispose As Panel
-    Friend WithEvents Label8 As Label
+    Friend WithEvents lblDisposeNumber As Label
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents PictureBox8 As PictureBox
-    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents pbBack As PictureBox
+    Friend WithEvents pbRefresh As PictureBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents pnMainBoxHR As Panel
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents pnSubBoxHR As Panel
     Friend WithEvents Label9 As Label
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label11 As Label
+    Friend WithEvents lblHRNumber As Label
     Friend WithEvents pnMainBoxIT As Panel
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents pnSubBoxIT As Panel
     Friend WithEvents Label12 As Label
     Friend WithEvents pnMainBoxMarketing As Panel
-    Friend WithEvents Label17 As Label
+    Friend WithEvents lblMarketingNumber As Label
     Friend WithEvents PictureBox12 As PictureBox
     Friend WithEvents pnSubBoxMarketing As Panel
     Friend WithEvents Label16 As Label
-    Friend WithEvents Label13 As Label
+    Friend WithEvents lblITNumber As Label
     Friend WithEvents pnMainBoxAccounting As Panel
     Friend WithEvents PictureBox14 As PictureBox
     Friend WithEvents pnSubBoxAccounting As Panel
@@ -1454,27 +1459,27 @@ Partial Class summaryForm
     Friend WithEvents pnSubBoxFinance As Panel
     Friend WithEvents Label29 As Label
     Friend WithEvents pnMainBoxCreative As Panel
-    Friend WithEvents Label37 As Label
+    Friend WithEvents lblCreativeNumber As Label
     Friend WithEvents Label30 As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents Label32 As Label
     Friend WithEvents PictureBox16 As PictureBox
     Friend WithEvents pnSubBoxCreative As Panel
     Friend WithEvents Label33 As Label
-    Friend WithEvents Label36 As Label
-    Friend WithEvents Label35 As Label
-    Friend WithEvents Label34 As Label
+    Friend WithEvents lblFinanceNumber As Label
+    Friend WithEvents lblAccountingNumber As Label
+    Friend WithEvents lblSalesNumber As Label
     Friend WithEvents pnMainBoxAcer As Panel
     Friend WithEvents PictureBox17 As PictureBox
     Friend WithEvents pnMainBoxLenovo As Panel
     Friend WithEvents PictureBox19 As PictureBox
     Friend WithEvents pnMainBoxDell As Panel
     Friend WithEvents PictureBox18 As PictureBox
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lblLenovoNumber As Label
+    Friend WithEvents lblDellNumber As Label
+    Friend WithEvents lblAcerNumber As Label
     Friend WithEvents pnMainBoxTotal As Panel
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblTotalNumber As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Label18 As Label
     Friend WithEvents Panel5 As Panel
@@ -1482,7 +1487,7 @@ Partial Class summaryForm
     Friend WithEvents Panel6 As Panel
     Friend WithEvents pnMainBox3Below As Panel
     Friend WithEvents pnMainBoxBetween As Panel
-    Friend WithEvents Label22 As Label
+    Friend WithEvents lblBetweenYears As Label
     Friend WithEvents pnMainBox5Above As Panel
     Friend WithEvents pnSubBox5Above As Panel
     Friend WithEvents pnSubBoxBetween As Panel
@@ -1490,6 +1495,6 @@ Partial Class summaryForm
     Friend WithEvents Label24 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Label23 As Label
+    Friend WithEvents lblBelowYears As Label
+    Friend WithEvents lblAboveYears As Label
 End Class

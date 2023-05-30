@@ -276,7 +276,7 @@ Partial Class userForm
         Panel7.Controls.Add(lblDesktopNumber)
         Panel7.Controls.Add(PictureBox5)
         Panel7.Controls.Add(pbDesktop)
-        Panel7.Location = New Point(26, 97)
+        Panel7.Location = New Point(176, 97)
         Panel7.Name = "Panel7"
         Panel7.Size = New Size(144, 67)
         Panel7.TabIndex = 11
@@ -307,7 +307,7 @@ Partial Class userForm
         Panel5.Controls.Add(lblLaptopNumber)
         Panel5.Controls.Add(PictureBox3)
         Panel5.Controls.Add(pbLaptop)
-        Panel5.Location = New Point(176, 97)
+        Panel5.Location = New Point(326, 97)
         Panel5.Name = "Panel5"
         Panel5.Size = New Size(144, 67)
         Panel5.TabIndex = 12
@@ -338,7 +338,7 @@ Partial Class userForm
         Panel6.Controls.Add(lblTotalNumber)
         Panel6.Controls.Add(PictureBox6)
         Panel6.Controls.Add(pbTotal)
-        Panel6.Location = New Point(326, 97)
+        Panel6.Location = New Point(26, 97)
         Panel6.Name = "Panel6"
         Panel6.Size = New Size(144, 67)
         Panel6.TabIndex = 13
@@ -464,9 +464,9 @@ Partial Class userForm
         ClientSize = New Size(1500, 962)
         Controls.Add(Panel10)
         Controls.Add(Panel9)
+        Controls.Add(Panel5)
         Controls.Add(Panel8)
         Controls.Add(Panel6)
-        Controls.Add(Panel5)
         Controls.Add(Panel7)
         Controls.Add(Panel4)
         Controls.Add(Panel3)

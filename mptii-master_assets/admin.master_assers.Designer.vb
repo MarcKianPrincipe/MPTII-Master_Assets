@@ -339,7 +339,7 @@ Partial Class adminForm
         ' 
         cbBrand.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         cbBrand.FormattingEnabled = True
-        cbBrand.Items.AddRange(New Object() {"Acer", "Dell"})
+        cbBrand.Items.AddRange(New Object() {"Acer", "Dell", "Lenovo"})
         cbBrand.Location = New Point(11, 366)
         cbBrand.Name = "cbBrand"
         cbBrand.Size = New Size(332, 25)
@@ -514,7 +514,7 @@ Partial Class adminForm
         ' 
         cbDepartment.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         cbDepartment.FormattingEnabled = True
-        cbDepartment.Items.AddRange(New Object() {"IT", "Sales", "Accounting", "Creative", "HRA", "Marketing"})
+        cbDepartment.Items.AddRange(New Object() {"IT", "Sales", "Accounting", "Creative", "HR", "Marketing", "Finance"})
         cbDepartment.Location = New Point(11, 318)
         cbDepartment.Name = "cbDepartment"
         cbDepartment.Size = New Size(332, 25)
@@ -652,7 +652,7 @@ Partial Class adminForm
         Panel7.Controls.Add(lblDesktopNumber)
         Panel7.Controls.Add(PictureBox5)
         Panel7.Controls.Add(pbDesktop)
-        Panel7.Location = New Point(23, 860)
+        Panel7.Location = New Point(158, 859)
         Panel7.Name = "Panel7"
         Panel7.Size = New Size(129, 56)
         Panel7.TabIndex = 10
@@ -715,7 +715,7 @@ Partial Class adminForm
         Panel8.Controls.Add(lblLaptopNumber)
         Panel8.Controls.Add(PictureBox3)
         Panel8.Controls.Add(pbLaptop)
-        Panel8.Location = New Point(158, 859)
+        Panel8.Location = New Point(293, 859)
         Panel8.Name = "Panel8"
         Panel8.Size = New Size(129, 56)
         Panel8.TabIndex = 11
@@ -745,7 +745,7 @@ Partial Class adminForm
         Panel9.Controls.Add(lblTotalNumber)
         Panel9.Controls.Add(PictureBox6)
         Panel9.Controls.Add(pbTotal)
-        Panel9.Location = New Point(293, 859)
+        Panel9.Location = New Point(23, 859)
         Panel9.Name = "Panel9"
         Panel9.Size = New Size(129, 56)
         Panel9.TabIndex = 12
@@ -870,12 +870,12 @@ Partial Class adminForm
         BackColor = SystemColors.ControlLight
         ClientSize = New Size(1500, 962)
         Controls.Add(Panel13)
+        Controls.Add(Panel7)
         Controls.Add(Panel12)
         Controls.Add(Panel11)
         Controls.Add(Panel9)
         Controls.Add(Panel8)
         Controls.Add(pnViewSummary)
-        Controls.Add(Panel7)
         Controls.Add(Panel5)
         Controls.Add(Panel4)
         Controls.Add(Panel2)

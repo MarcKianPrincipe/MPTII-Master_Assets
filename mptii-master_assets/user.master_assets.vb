@@ -164,85 +164,136 @@ Public Class userForm
     End Sub
 
     Private Sub pbDesktop_Click(sender As Object, e As EventArgs) Handles pbDesktop.Click
-        ' Get the original data from the class-level DataTable
-        Dim filteredDataTable As DataTable = dataTable.Clone()
+        ' Refresh the data from the server
+        RefreshData()
 
-        ' Filter the data to show only desktop asset type
-        For Each row As DataRow In dataTable.Rows
-            Dim cellValue As Object = row("Asset Type")
-            If cellValue IsNot Nothing AndAlso cellValue.ToString() = "Desktop" Then
-                filteredDataTable.ImportRow(row)
+        ' Filter the data to show only desktop assets
+        Dim filteredDataTable As DataTable = DirectCast(dgAssets.DataSource, DataTable)
+
+        Dim rowsToRemove As New List(Of DataRow)()
+
+        For Each row As DataRow In filteredDataTable.Rows
+            Dim assetType As Object = row("Asset Type")
+            If assetType IsNot Nothing AndAlso assetType.ToString() <> "Desktop" Then
+                rowsToRemove.Add(row)
             End If
         Next
 
-        ' Bind the filtered data to the DataGridView
-        dgAssets.DataSource = filteredDataTable
+        ' Remove rows that do not match the filter
+        For Each row As DataRow In rowsToRemove
+            filteredDataTable.Rows.Remove(row)
+        Next
+
+        ' Refresh the DataGridView to reflect the changes
+        dgAssets.Refresh()
     End Sub
 
     Private Sub pbLaptop_Click(sender As Object, e As EventArgs) Handles pbLaptop.Click
-        ' Get the original data from the class-level DataTable
-        Dim filteredDataTable As DataTable = dataTable.Clone()
+        ' Refresh the data from the server
+        RefreshData()
 
-        ' Filter the data to show only laptop asset type
-        For Each row As DataRow In dataTable.Rows
-            Dim cellValue As Object = row("Asset Type")
-            If cellValue IsNot Nothing AndAlso cellValue.ToString() = "Laptop" Then
-                filteredDataTable.ImportRow(row)
+        ' Filter the data to show only laptop assets
+        Dim filteredDataTable As DataTable = DirectCast(dgAssets.DataSource, DataTable)
+
+        Dim rowsToRemove As New List(Of DataRow)()
+
+        For Each row As DataRow In filteredDataTable.Rows
+            Dim assetType As Object = row("Asset Type")
+            If assetType IsNot Nothing AndAlso assetType.ToString() <> "Laptop" Then
+                rowsToRemove.Add(row)
             End If
         Next
 
-        ' Bind the filtered data to the DataGridView
-        dgAssets.DataSource = filteredDataTable
+        ' Remove rows that do not match the filter
+        For Each row As DataRow In rowsToRemove
+            filteredDataTable.Rows.Remove(row)
+        Next
+
+        ' Refresh the DataGridView to reflect the changes
+        dgAssets.Refresh()
     End Sub
 
     Private Sub pbTotal_Click(sender As Object, e As EventArgs) Handles pbTotal.Click
-        ' Bind the original data to the DataGridView
-        dgAssets.DataSource = dataTable
+        ' Refresh the data from the server
+        RefreshData()
+
+        ' Refresh the DataGridView to reflect the changes
+        dgAssets.Refresh()
     End Sub
 
     Private Sub pbActive_Click(sender As Object, e As EventArgs) Handles pbActive.Click
-        ' Get the active assets from the original data
-        Dim filteredDataTable As DataTable = dataTable.Clone()
+        ' Refresh the data from the server
+        RefreshData()
 
-        For Each row As DataRow In dataTable.Rows
-            Dim status As String = row("Status").ToString()
-            If status = "Active" Then
-                filteredDataTable.ImportRow(row)
+        ' Filter the data to show only active assets
+        Dim filteredDataTable As DataTable = DirectCast(dgAssets.DataSource, DataTable)
+
+        Dim rowsToRemove As New List(Of DataRow)()
+
+        For Each row As DataRow In filteredDataTable.Rows
+            Dim status As Object = row("Status")
+            If status IsNot Nothing AndAlso status.ToString() <> "Active" Then
+                rowsToRemove.Add(row)
             End If
         Next
 
-        ' Bind the filtered data to the DataGridView
-        dgAssets.DataSource = filteredDataTable
+        ' Remove rows that do not match the filter
+        For Each row As DataRow In rowsToRemove
+            filteredDataTable.Rows.Remove(row)
+        Next
+
+        ' Refresh the DataGridView to reflect the changes
+        dgAssets.Refresh()
     End Sub
 
     Private Sub pbInactive_Click(sender As Object, e As EventArgs) Handles pbInactive.Click
-        ' Get the inactive assets from the original data
-        Dim filteredDataTable As DataTable = dataTable.Clone()
+        ' Refresh the data from the server
+        RefreshData()
 
-        For Each row As DataRow In dataTable.Rows
-            Dim status As String = row("Status").ToString()
-            If status = "Inactive" Then
-                filteredDataTable.ImportRow(row)
+        ' Filter the data to show only inactive assets
+        Dim filteredDataTable As DataTable = DirectCast(dgAssets.DataSource, DataTable)
+
+        Dim rowsToRemove As New List(Of DataRow)()
+
+        For Each row As DataRow In filteredDataTable.Rows
+            Dim status As Object = row("Status")
+            If status IsNot Nothing AndAlso status.ToString() <> "Inactive" Then
+                rowsToRemove.Add(row)
             End If
         Next
 
-        ' Bind the filtered data to the DataGridView
-        dgAssets.DataSource = filteredDataTable
+        ' Remove rows that do not match the filter
+        For Each row As DataRow In rowsToRemove
+            filteredDataTable.Rows.Remove(row)
+        Next
+
+        ' Refresh the DataGridView to reflect the changes
+        dgAssets.Refresh()
     End Sub
 
     Private Sub pbDispose_Click(sender As Object, e As EventArgs) Handles pbDispose.Click
-        ' Get the active assets from the original data
-        Dim filteredDataTable As DataTable = dataTable.Clone()
+        ' Refresh the data from the server
+        RefreshData()
 
-        For Each row As DataRow In dataTable.Rows
-            Dim status As String = row("Status").ToString()
-            If status = "Dispose" Then
-                filteredDataTable.ImportRow(row)
+        ' Filter the data to show only disposed assets
+        Dim filteredDataTable As DataTable = DirectCast(dgAssets.DataSource, DataTable)
+
+        Dim rowsToRemove As New List(Of DataRow)()
+
+        For Each row As DataRow In filteredDataTable.Rows
+            Dim status As Object = row("Status")
+            If status IsNot Nothing AndAlso status.ToString() <> "Dispose" Then
+                rowsToRemove.Add(row)
             End If
         Next
 
-        ' Bind the filtered data to the DataGridView
-        dgAssets.DataSource = filteredDataTable
+        ' Remove rows that do not match the filter
+        For Each row As DataRow In rowsToRemove
+            filteredDataTable.Rows.Remove(row)
+        Next
+
+        ' Refresh the DataGridView to reflect the changes
+        dgAssets.Refresh()
     End Sub
 
     Private Sub RefreshData()
