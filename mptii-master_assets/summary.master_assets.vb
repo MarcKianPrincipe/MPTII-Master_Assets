@@ -136,8 +136,8 @@ Public Class summaryForm
     End Sub
 
     Private Function GetAssetCount(assetType As String) As Integer
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;User ID=sa;Password=password"
-        Dim query As String = $"SELECT COUNT(*) AS AssetCount FROM [DBmptii_master-asset].[dbo].[TBmptii-assets] WHERE [Asset Type] = '{assetType}'"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
+        Dim query As String = $"SELECT COUNT(*) AS AssetCount FROM [OJRS].[dbo].[TBmptii-assets] WHERE [Asset Type] = '{assetType}'"
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand(query, connection)
@@ -151,8 +151,8 @@ Public Class summaryForm
     End Function
 
     Private Function GetTotalCount() As Integer
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;User ID=sa;Password=password"
-        Dim query As String = "SELECT COUNT(*) AS TotalCount FROM [DBmptii_master-asset].[dbo].[TBmptii-assets]"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
+        Dim query As String = "SELECT COUNT(*) AS TotalCount FROM [OJRS].[dbo].[TBmptii-assets]"
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand(query, connection)
@@ -166,8 +166,8 @@ Public Class summaryForm
     End Function
 
     Private Function GetStatusCount(status As String) As Integer
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;User ID=sa;Password=password"
-        Dim query As String = $"SELECT COUNT(*) AS StatusCount FROM [DBmptii_master-asset].[dbo].[TBmptii-assets] WHERE [Status] = '{status}'"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
+        Dim query As String = $"SELECT COUNT(*) AS StatusCount FROM [OJRS].[dbo].[TBmptii-assets] WHERE [Status] = '{status}'"
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand(query, connection)
@@ -181,8 +181,8 @@ Public Class summaryForm
     End Function
 
     Private Function GetBrandCount(brand As String) As Integer
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;User ID=sa;Password=password"
-        Dim query As String = $"SELECT COUNT(*) AS BrandCount FROM [DBmptii_master-asset].[dbo].[TBmptii-assets] WHERE [Brand] = '{brand}'"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
+        Dim query As String = $"SELECT COUNT(*) AS BrandCount FROM [OJRS].[dbo].[TBmptii-assets] WHERE [Brand] = '{brand}'"
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand(query, connection)
@@ -196,8 +196,8 @@ Public Class summaryForm
     End Function
 
     Private Function GetDepartmentCount(department As String) As Integer
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;User ID=sa;Password=password"
-        Dim query As String = $"SELECT COUNT(*) AS BrandCount FROM [DBmptii_master-asset].[dbo].[TBmptii-assets] WHERE [Department] = '{department}'"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
+        Dim query As String = $"SELECT COUNT(*) AS BrandCount FROM [OJRS].[dbo].[TBmptii-assets] WHERE [Department] = '{department}'"
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand(query, connection)
@@ -211,8 +211,8 @@ Public Class summaryForm
     End Function
 
     Private Function GetAgeRangeCount(minYears As Single, maxYears As Single) As Integer
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;User ID=sa;Password=password"
-        Dim query As String = $"SELECT COUNT(*) AS AgeRangeCount FROM [DBmptii_master-asset].[dbo].[TBmptii-assets] WHERE [Year Age] >= {minYears} AND [Year Age] < {maxYears}"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
+        Dim query As String = $"SELECT COUNT(*) AS AgeRangeCount FROM [OJRS].[dbo].[TBmptii-assets] WHERE [Year Age] >= {minYears} AND [Year Age] < {maxYears}"
 
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand(query, connection)

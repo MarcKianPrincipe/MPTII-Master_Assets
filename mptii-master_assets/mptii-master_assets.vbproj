@@ -7,7 +7,12 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
+    <ApplicationIcon>assets\DreamShaper_v5_hand_a_computer_laptops_cartoons_inventory_1.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="assets\DreamShaper_v5_hand_a_computer_laptops_cartoons_inventory_1.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Import Include="System.Data" />

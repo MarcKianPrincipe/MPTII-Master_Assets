@@ -6,10 +6,10 @@ Public Class userForm
 
     Private Sub userForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Connection string for your SQL Server
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;User ID=sa;Password=password"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
 
         ' SQL query to fetch the data from the table
-        Dim query As String = "SELECT [Unit Number], [Asset Type], [Current User], [Purchase Date], [Year Age], [Issued To], [Department], [Brand], [Model], [Processor], [Windows], [O365 Expiration], [Active Directory], [Status] FROM [DBmptii_master-asset].[dbo].[TBmptii-assets]"
+        Dim query As String = "SELECT [Unit Number], [Item Code], [Asset Type], [Current User], [Purchase Date], [Year Age], [Serial Number], [Department], [Brand], [Model], [Processor], [Windows], [O365 Expiration], [Active Directory], [Status], [Remarks] FROM [OJRS].[dbo].[TBmptii-assets]"
 
         ' Create a new DataTable to hold the data
         dataTable = New DataTable()
@@ -32,6 +32,9 @@ Public Class userForm
 
         ' Manually adjust the vertical scrollbar
         dgAssets.ScrollBars = ScrollBars.Both
+
+        dgAssets.Font = New Font(dgAssets.Font.FontFamily, 11)
+
 
         ' Desktop Counter
         Dim desktopCount As Integer = 0
@@ -299,7 +302,7 @@ Public Class userForm
     Private Sub RefreshData()
 
         ' Retrieve the updated data from the database and bind it to the table form controls
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;Persist Security Info=True;User ID=sa;Password=password"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
         Dim query As String = "SELECT * FROM [TBmptii-assets] ORDER BY [Unit Number] ASC"
 
         Using connection As New SqlConnection(connectionString)

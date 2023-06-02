@@ -40,6 +40,10 @@ Partial Class adminForm
         Panel2 = New Panel()
         dgAssets = New DataGridView()
         Panel4 = New Panel()
+        txtRemarks = New TextBox()
+        Label17 = New Label()
+        txtItemCode = New TextBox()
+        Label16 = New Label()
         Label15 = New Label()
         cbAssetType = New ComboBox()
         cbBrand = New ComboBox()
@@ -63,7 +67,7 @@ Partial Class adminForm
         cbDepartment = New ComboBox()
         Label6 = New Label()
         Label5 = New Label()
-        txtIssuedTo = New TextBox()
+        txtSerialNumber = New TextBox()
         Label4 = New Label()
         txtYearAge = New TextBox()
         dtpPurchaseDate = New DateTimePicker()
@@ -95,6 +99,7 @@ Partial Class adminForm
         Panel13 = New Panel()
         lblDisposeNumber = New Label()
         PictureBox14 = New PictureBox()
+        BackgroundWorker1 = New ComponentModel.BackgroundWorker()
         Panel1.SuspendLayout()
         CType(pictureAccount, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -170,13 +175,12 @@ Partial Class adminForm
         ' 
         ' Label1
         ' 
-        Label1.AutoSize = True
         Label1.FlatStyle = FlatStyle.Flat
         Label1.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point)
         Label1.ForeColor = Color.FromArgb(CByte(0), CByte(0), CByte(64))
-        Label1.Location = New Point(503, 8)
+        Label1.Location = New Point(0, 11)
         Label1.Name = "Label1"
-        Label1.Size = New Size(475, 20)
+        Label1.Size = New Size(1503, 20)
         Label1.TabIndex = 0
         Label1.Text = "Copyright @ 2023 Much Prosperity Trading Inc.. All Rights Reserved."
         Label1.TextAlign = ContentAlignment.MiddleCenter
@@ -262,24 +266,28 @@ Partial Class adminForm
         ' 
         Panel2.BackColor = Color.White
         Panel2.Controls.Add(dgAssets)
-        Panel2.Location = New Point(23, 97)
+        Panel2.Location = New Point(23, 159)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(1092, 756)
+        Panel2.Size = New Size(1092, 694)
         Panel2.TabIndex = 7
         ' 
         ' dgAssets
         ' 
         dgAssets.BackgroundColor = Color.White
-        dgAssets.Location = New Point(13, 14)
+        dgAssets.Location = New Point(13, 18)
         dgAssets.Name = "dgAssets"
         dgAssets.ReadOnly = True
         dgAssets.RowTemplate.Height = 25
-        dgAssets.Size = New Size(1065, 726)
+        dgAssets.Size = New Size(1065, 660)
         dgAssets.TabIndex = 0
         ' 
         ' Panel4
         ' 
         Panel4.BackColor = Color.White
+        Panel4.Controls.Add(txtRemarks)
+        Panel4.Controls.Add(Label17)
+        Panel4.Controls.Add(txtItemCode)
+        Panel4.Controls.Add(Label16)
         Panel4.Controls.Add(Label15)
         Panel4.Controls.Add(cbAssetType)
         Panel4.Controls.Add(cbBrand)
@@ -303,23 +311,59 @@ Partial Class adminForm
         Panel4.Controls.Add(cbDepartment)
         Panel4.Controls.Add(Label6)
         Panel4.Controls.Add(Label5)
-        Panel4.Controls.Add(txtIssuedTo)
+        Panel4.Controls.Add(txtSerialNumber)
         Panel4.Controls.Add(Label4)
         Panel4.Controls.Add(txtYearAge)
         Panel4.Controls.Add(dtpPurchaseDate)
         Panel4.Controls.Add(Label3)
         Panel4.Controls.Add(Label2)
         Panel4.Controls.Add(txtUnitNumber)
-        Panel4.Location = New Point(1121, 158)
+        Panel4.Location = New Point(1121, 97)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(353, 758)
+        Panel4.Size = New Size(353, 819)
         Panel4.TabIndex = 8
+        ' 
+        ' txtRemarks
+        ' 
+        txtRemarks.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        txtRemarks.Location = New Point(10, 747)
+        txtRemarks.Name = "txtRemarks"
+        txtRemarks.Size = New Size(332, 25)
+        txtRemarks.TabIndex = 37
+        ' 
+        ' Label17
+        ' 
+        Label17.AutoSize = True
+        Label17.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label17.Location = New Point(10, 727)
+        Label17.Name = "Label17"
+        Label17.Size = New Size(61, 17)
+        Label17.TabIndex = 36
+        Label17.Text = "Remarks:"
+        ' 
+        ' txtItemCode
+        ' 
+        txtItemCode.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        txtItemCode.Location = New Point(10, 75)
+        txtItemCode.Name = "txtItemCode"
+        txtItemCode.Size = New Size(332, 25)
+        txtItemCode.TabIndex = 35
+        ' 
+        ' Label16
+        ' 
+        Label16.AutoSize = True
+        Label16.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        Label16.Location = New Point(10, 55)
+        Label16.Name = "Label16"
+        Label16.Size = New Size(71, 17)
+        Label16.TabIndex = 34
+        Label16.Text = "Item Code:"
         ' 
         ' Label15
         ' 
         Label15.AutoSize = True
         Label15.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label15.Location = New Point(10, 55)
+        Label15.Location = New Point(9, 103)
         Label15.Name = "Label15"
         Label15.Size = New Size(70, 17)
         Label15.TabIndex = 33
@@ -330,7 +374,7 @@ Partial Class adminForm
         cbAssetType.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         cbAssetType.FormattingEnabled = True
         cbAssetType.Items.AddRange(New Object() {"Desktop", "Laptop"})
-        cbAssetType.Location = New Point(10, 78)
+        cbAssetType.Location = New Point(10, 123)
         cbAssetType.Name = "cbAssetType"
         cbAssetType.Size = New Size(332, 25)
         cbAssetType.TabIndex = 32
@@ -340,7 +384,7 @@ Partial Class adminForm
         cbBrand.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         cbBrand.FormattingEnabled = True
         cbBrand.Items.AddRange(New Object() {"Acer", "Dell", "Lenovo"})
-        cbBrand.Location = New Point(11, 366)
+        cbBrand.Location = New Point(10, 411)
         cbBrand.Name = "cbBrand"
         cbBrand.Size = New Size(332, 25)
         cbBrand.TabIndex = 31
@@ -350,7 +394,7 @@ Partial Class adminForm
         cbStatus.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         cbStatus.FormattingEnabled = True
         cbStatus.Items.AddRange(New Object() {"Active", "Inactive", "Dispose"})
-        cbStatus.Location = New Point(11, 654)
+        cbStatus.Location = New Point(10, 699)
         cbStatus.Name = "cbStatus"
         cbStatus.Size = New Size(332, 25)
         cbStatus.TabIndex = 30
@@ -359,7 +403,7 @@ Partial Class adminForm
         ' 
         Label14.AutoSize = True
         Label14.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label14.Location = New Point(11, 634)
+        Label14.Location = New Point(10, 679)
         Label14.Name = "Label14"
         Label14.Size = New Size(46, 17)
         Label14.TabIndex = 29
@@ -368,7 +412,7 @@ Partial Class adminForm
         ' txtModel
         ' 
         txtModel.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        txtModel.Location = New Point(11, 414)
+        txtModel.Location = New Point(10, 459)
         txtModel.Name = "txtModel"
         txtModel.Size = New Size(332, 25)
         txtModel.TabIndex = 28
@@ -377,7 +421,7 @@ Partial Class adminForm
         ' 
         Label13.AutoSize = True
         Label13.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label13.Location = New Point(11, 394)
+        Label13.Location = New Point(10, 439)
         Label13.Name = "Label13"
         Label13.Size = New Size(49, 17)
         Label13.TabIndex = 27
@@ -386,7 +430,7 @@ Partial Class adminForm
         ' txtCurrentUser
         ' 
         txtCurrentUser.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        txtCurrentUser.Location = New Point(11, 126)
+        txtCurrentUser.Location = New Point(10, 171)
         txtCurrentUser.Name = "txtCurrentUser"
         txtCurrentUser.Size = New Size(332, 25)
         txtCurrentUser.TabIndex = 26
@@ -395,7 +439,7 @@ Partial Class adminForm
         ' 
         Label12.AutoSize = True
         Label12.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label12.Location = New Point(10, 106)
+        Label12.Location = New Point(10, 151)
         Label12.Name = "Label12"
         Label12.Size = New Size(82, 17)
         Label12.TabIndex = 25
@@ -405,7 +449,7 @@ Partial Class adminForm
         ' 
         dtpO365.CalendarFont = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         dtpO365.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        dtpO365.Location = New Point(11, 558)
+        dtpO365.Location = New Point(10, 603)
         dtpO365.Name = "dtpO365"
         dtpO365.Size = New Size(332, 25)
         dtpO365.TabIndex = 24
@@ -414,9 +458,9 @@ Partial Class adminForm
         ' 
         btnAdd.Cursor = Cursors.Hand
         btnAdd.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        btnAdd.Location = New Point(180, 701)
+        btnAdd.Location = New Point(178, 778)
         btnAdd.Name = "btnAdd"
-        btnAdd.Size = New Size(162, 33)
+        btnAdd.Size = New Size(164, 33)
         btnAdd.TabIndex = 23
         btnAdd.Text = "Add"
         btnAdd.UseVisualStyleBackColor = True
@@ -425,9 +469,9 @@ Partial Class adminForm
         ' 
         btnUpdate.Cursor = Cursors.Hand
         btnUpdate.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point)
-        btnUpdate.Location = New Point(10, 701)
+        btnUpdate.Location = New Point(10, 778)
         btnUpdate.Name = "btnUpdate"
-        btnUpdate.Size = New Size(163, 33)
+        btnUpdate.Size = New Size(162, 33)
         btnUpdate.TabIndex = 22
         btnUpdate.Text = "Update"
         btnUpdate.UseVisualStyleBackColor = True
@@ -437,7 +481,7 @@ Partial Class adminForm
         cbActiveDirectory.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         cbActiveDirectory.FormattingEnabled = True
         cbActiveDirectory.Items.AddRange(New Object() {"With Active Directory", "Without Active Directory"})
-        cbActiveDirectory.Location = New Point(11, 606)
+        cbActiveDirectory.Location = New Point(10, 651)
         cbActiveDirectory.Name = "cbActiveDirectory"
         cbActiveDirectory.Size = New Size(332, 25)
         cbActiveDirectory.TabIndex = 21
@@ -446,7 +490,7 @@ Partial Class adminForm
         ' 
         Label11.AutoSize = True
         Label11.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label11.Location = New Point(11, 586)
+        Label11.Location = New Point(10, 631)
         Label11.Name = "Label11"
         Label11.Size = New Size(102, 17)
         Label11.TabIndex = 20
@@ -456,7 +500,7 @@ Partial Class adminForm
         ' 
         Label10.AutoSize = True
         Label10.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label10.Location = New Point(11, 538)
+        Label10.Location = New Point(9, 583)
         Label10.Name = "Label10"
         Label10.Size = New Size(104, 17)
         Label10.TabIndex = 18
@@ -467,7 +511,7 @@ Partial Class adminForm
         cbWindows.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         cbWindows.FormattingEnabled = True
         cbWindows.Items.AddRange(New Object() {"Windows 10 Pro", "Windows 11 Pro"})
-        cbWindows.Location = New Point(11, 510)
+        cbWindows.Location = New Point(10, 555)
         cbWindows.Name = "cbWindows"
         cbWindows.Size = New Size(332, 25)
         cbWindows.TabIndex = 17
@@ -476,7 +520,7 @@ Partial Class adminForm
         ' 
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label9.Location = New Point(11, 490)
+        Label9.Location = New Point(10, 535)
         Label9.Name = "Label9"
         Label9.Size = New Size(64, 17)
         Label9.TabIndex = 16
@@ -486,7 +530,7 @@ Partial Class adminForm
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label8.Location = New Point(11, 442)
+        Label8.Location = New Point(9, 487)
         Label8.Name = "Label8"
         Label8.Size = New Size(69, 17)
         Label8.TabIndex = 15
@@ -495,7 +539,7 @@ Partial Class adminForm
         ' txtProcessor
         ' 
         txtProcessor.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        txtProcessor.Location = New Point(11, 462)
+        txtProcessor.Location = New Point(10, 507)
         txtProcessor.Name = "txtProcessor"
         txtProcessor.Size = New Size(332, 25)
         txtProcessor.TabIndex = 14
@@ -504,7 +548,7 @@ Partial Class adminForm
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label7.Location = New Point(11, 346)
+        Label7.Location = New Point(10, 391)
         Label7.Name = "Label7"
         Label7.Size = New Size(45, 17)
         Label7.TabIndex = 13
@@ -515,7 +559,7 @@ Partial Class adminForm
         cbDepartment.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         cbDepartment.FormattingEnabled = True
         cbDepartment.Items.AddRange(New Object() {"IT", "Sales", "Accounting", "Creative", "HR", "Marketing", "Finance"})
-        cbDepartment.Location = New Point(11, 318)
+        cbDepartment.Location = New Point(10, 363)
         cbDepartment.Name = "cbDepartment"
         cbDepartment.Size = New Size(332, 25)
         cbDepartment.TabIndex = 11
@@ -524,7 +568,7 @@ Partial Class adminForm
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label6.Location = New Point(11, 298)
+        Label6.Location = New Point(10, 343)
         Label6.Name = "Label6"
         Label6.Size = New Size(80, 17)
         Label6.TabIndex = 10
@@ -534,25 +578,25 @@ Partial Class adminForm
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label5.Location = New Point(11, 250)
+        Label5.Location = New Point(10, 295)
         Label5.Name = "Label5"
-        Label5.Size = New Size(66, 17)
+        Label5.Size = New Size(95, 17)
         Label5.TabIndex = 8
-        Label5.Text = "Issued To:"
+        Label5.Text = "Serial Number:"
         ' 
-        ' txtIssuedTo
+        ' txtSerialNumber
         ' 
-        txtIssuedTo.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        txtIssuedTo.Location = New Point(11, 270)
-        txtIssuedTo.Name = "txtIssuedTo"
-        txtIssuedTo.Size = New Size(332, 25)
-        txtIssuedTo.TabIndex = 7
+        txtSerialNumber.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
+        txtSerialNumber.Location = New Point(10, 315)
+        txtSerialNumber.Name = "txtSerialNumber"
+        txtSerialNumber.Size = New Size(332, 25)
+        txtSerialNumber.TabIndex = 7
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.Location = New Point(11, 202)
+        Label4.Location = New Point(9, 247)
         Label4.Name = "Label4"
         Label4.Size = New Size(63, 17)
         Label4.TabIndex = 6
@@ -562,7 +606,7 @@ Partial Class adminForm
         ' 
         txtYearAge.Enabled = False
         txtYearAge.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        txtYearAge.Location = New Point(11, 222)
+        txtYearAge.Location = New Point(10, 267)
         txtYearAge.Name = "txtYearAge"
         txtYearAge.Size = New Size(332, 25)
         txtYearAge.TabIndex = 5
@@ -571,7 +615,7 @@ Partial Class adminForm
         ' 
         dtpPurchaseDate.CalendarFont = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         dtpPurchaseDate.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        dtpPurchaseDate.Location = New Point(11, 174)
+        dtpPurchaseDate.Location = New Point(10, 219)
         dtpPurchaseDate.Name = "dtpPurchaseDate"
         dtpPurchaseDate.Size = New Size(332, 25)
         dtpPurchaseDate.TabIndex = 4
@@ -580,7 +624,7 @@ Partial Class adminForm
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.Location = New Point(10, 154)
+        Label3.Location = New Point(10, 199)
         Label3.Name = "Label3"
         Label3.Size = New Size(94, 17)
         Label3.TabIndex = 3
@@ -592,9 +636,9 @@ Partial Class adminForm
         Label2.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point)
         Label2.Location = New Point(10, 7)
         Label2.Name = "Label2"
-        Label2.Size = New Size(104, 17)
+        Label2.Size = New Size(86, 17)
         Label2.TabIndex = 1
-        Label2.Text = "Laptop Number:"
+        Label2.Text = "Unit Number:"
         ' 
         ' txtUnitNumber
         ' 
@@ -611,16 +655,16 @@ Partial Class adminForm
         Panel5.Controls.Add(pbClearButton)
         Panel5.Controls.Add(txtSearch)
         Panel5.Controls.Add(btnSearch)
-        Panel5.Location = New Point(1121, 97)
+        Panel5.Location = New Point(23, 97)
         Panel5.Name = "Panel5"
-        Panel5.Size = New Size(353, 56)
+        Panel5.Size = New Size(1092, 56)
         Panel5.TabIndex = 9
         ' 
         ' pbClearButton
         ' 
         pbClearButton.Cursor = Cursors.Hand
         pbClearButton.Image = CType(resources.GetObject("pbClearButton.Image"), Image)
-        pbClearButton.Location = New Point(221, 17)
+        pbClearButton.Location = New Point(956, 16)
         pbClearButton.Name = "pbClearButton"
         pbClearButton.Size = New Size(16, 18)
         pbClearButton.SizeMode = PictureBoxSizeMode.Zoom
@@ -630,16 +674,16 @@ Partial Class adminForm
         ' txtSearch
         ' 
         txtSearch.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        txtSearch.Location = New Point(9, 12)
+        txtSearch.Location = New Point(660, 12)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(234, 27)
+        txtSearch.Size = New Size(318, 27)
         txtSearch.TabIndex = 0
         ' 
         ' btnSearch
         ' 
         btnSearch.Cursor = Cursors.Hand
         btnSearch.Font = New Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point)
-        btnSearch.Location = New Point(250, 12)
+        btnSearch.Location = New Point(987, 12)
         btnSearch.Name = "btnSearch"
         btnSearch.Size = New Size(91, 27)
         btnSearch.TabIndex = 2
@@ -694,7 +738,7 @@ Partial Class adminForm
         lblViewSummary.AutoSize = True
         lblViewSummary.Font = New Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point)
         lblViewSummary.ForeColor = Color.FromArgb(CByte(15), CByte(29), CByte(65))
-        lblViewSummary.Location = New Point(89, 16)
+        lblViewSummary.Location = New Point(91, 16)
         lblViewSummary.Name = "lblViewSummary"
         lblViewSummary.Size = New Size(177, 25)
         lblViewSummary.TabIndex = 5
@@ -889,7 +933,6 @@ Partial Class adminForm
         CType(pictureAccount, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel3.ResumeLayout(False)
-        Panel3.PerformLayout()
         CType(pbDesktop, ComponentModel.ISupportInitialize).EndInit()
         CType(pbViewSummary, ComponentModel.ISupportInitialize).EndInit()
         CType(pbLaptop, ComponentModel.ISupportInitialize).EndInit()
@@ -941,7 +984,7 @@ Partial Class adminForm
     Friend WithEvents txtYearAge As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtIssuedTo As TextBox
+    Friend WithEvents txtSerialNumber As TextBox
     Friend WithEvents cbDepartment As ComboBox
     Friend WithEvents cbWindows As ComboBox
     Friend WithEvents Label9 As Label
@@ -994,4 +1037,9 @@ Partial Class adminForm
     Friend WithEvents lblInactiveNumber As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents pbClearButton As PictureBox
+    Friend WithEvents txtItemCode As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents txtRemarks As TextBox
 End Class

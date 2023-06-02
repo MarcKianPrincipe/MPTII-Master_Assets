@@ -130,8 +130,6 @@ Partial Class userForm
         ' 
         ' dgAssets
         ' 
-        dgAssets.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        dgAssets.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells
         dgAssets.BackgroundColor = Color.White
         dgAssets.GridColor = SystemColors.ControlDarkDark
         dgAssets.Location = New Point(17, 17)

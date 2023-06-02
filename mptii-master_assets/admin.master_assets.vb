@@ -6,10 +6,10 @@ Public Class adminForm
 
     Private Sub adminForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Connection string for your SQL Server
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;User ID=sa;Password=password"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
 
         ' SQL query to fetch the data from the table
-        Dim query As String = "SELECT [Unit Number], [Asset Type], [Current User], [Purchase Date], [Year Age], [Issued To], [Department], [Brand], [Model], [Processor], [Windows], [O365 Expiration], [Active Directory], [Status] FROM [DBmptii_master-asset].[dbo].[TBmptii-assets]"
+        Dim query As String = "SELECT [Unit Number], [Item Code], [Asset Type], [Current User], [Purchase Date], [Year Age], [Serial Number], [Department], [Brand], [Model], [Processor], [Windows], [O365 Expiration], [Active Directory], [Status], [Remarks] FROM [OJRS].[dbo].[TBmptii-assets]"
         ' Create a new DataTable to hold the data
         dataTable = New DataTable()
 
@@ -132,9 +132,12 @@ Public Class adminForm
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         ' Get the values from the input controls
+        Dim itemCode As String
+        Dim assetType As String
+        Dim currentUser As String
         Dim yearAge As Double
         Dim purchaseDate As DateTime
-        Dim issuedTo As String
+        Dim serialNumber As String
         Dim department As String
         Dim brand As String
         Dim model As String
@@ -143,14 +146,14 @@ Public Class adminForm
         Dim o365Expiration As DateTime
         Dim activeDirectory As String
         Dim status As String
-        Dim currentUser As String
-        Dim assetType As String
+        Dim remarks As String
 
         ' Exception handling for null values
         Try
+            itemCode = txtItemCode.Text
             yearAge = Double.Parse(txtYearAge.Text)
             purchaseDate = dtpPurchaseDate.Value
-            issuedTo = txtIssuedTo.Text
+            serialNumber = txtSerialNumber.Text
             department = cbDepartment.Text
             brand = cbBrand.Text
             model = txtModel.Text
@@ -161,13 +164,14 @@ Public Class adminForm
             status = cbStatus.Text
             currentUser = txtCurrentUser.Text
             assetType = cbAssetType.Text
+            remarks = txtRemarks.Text
         Catch ex As Exception
             MessageBox.Show("Please enter valid values for all fields.")
             Return
         End Try
 
         ' Connection string for your SQL Server
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;Persist Security Info=True;User ID=sa;Password=password"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
 
         ' SQL query to get the maximum existing unit number
         Dim maxUnitNumberQuery As String = "SELECT MAX([Unit Number]) FROM [TBmptii-assets]"
@@ -192,15 +196,18 @@ Public Class adminForm
                 End If
 
                 ' SQL query to insert the data into the table
-                Dim query As String = "INSERT INTO [TBmptii-assets] ([Unit Number], [Asset Type], [Purchase Date], [Year Age], [Issued To], [Department], [Brand], [Model], [Processor], [Windows], [O365 Expiration], [Active Directory], [Status], [Current User]) VALUES (@UnitNumber, @AssetType, @PurchaseDate, @YearAge, @IssuedTo, @Department, @Brand, @Model, @Processor, @Windows, @O365Expiration, @ActiveDirectory, @Status, @CurrentUser)"
+                Dim query As String = "INSERT INTO [TBmptii-assets] ([Unit Number], [Item Code], [Asset Type], [Purchase Date], [Year Age], [Serial Number], [Department], [Brand], [Model], [Processor], [Windows], [O365 Expiration], [Active Directory], [Status], [Current User], [Remarks]) VALUES (@UnitNumber, @ItemCode, @AssetType, @PurchaseDate, @YearAge, @SerialNumber, @Department, @Brand, @Model, @Processor, @Windows, @O365Expiration, @ActiveDirectory, @Status, @CurrentUser, @Remarks)"
 
                 ' Create a new SqlCommand using the query and connection
                 Using insertCommand As New SqlCommand(query, connection)
                     ' Add parameters to the insertCommand
                     insertCommand.Parameters.AddWithValue("@UnitNumber", unitNumber)
+                    insertCommand.Parameters.AddWithValue("@ItemCode", itemCode)
+                    insertCommand.Parameters.AddWithValue("@AssetType", assetType)
+                    insertCommand.Parameters.AddWithValue("@CurrentUser", currentUser)
                     insertCommand.Parameters.AddWithValue("@PurchaseDate", purchaseDate)
                     insertCommand.Parameters.AddWithValue("@YearAge", yearAge)
-                    insertCommand.Parameters.AddWithValue("@IssuedTo", issuedTo)
+                    insertCommand.Parameters.AddWithValue("@SerialNumber", serialNumber)
                     insertCommand.Parameters.AddWithValue("@Department", department)
                     insertCommand.Parameters.AddWithValue("@Brand", brand)
                     insertCommand.Parameters.AddWithValue("@Model", model)
@@ -209,8 +216,7 @@ Public Class adminForm
                     insertCommand.Parameters.AddWithValue("@O365Expiration", o365Expiration)
                     insertCommand.Parameters.AddWithValue("@ActiveDirectory", activeDirectory)
                     insertCommand.Parameters.AddWithValue("@Status", status)
-                    insertCommand.Parameters.AddWithValue("@CurrentUser", currentUser)
-                    insertCommand.Parameters.AddWithValue("@AssetType", assetType)
+                    insertCommand.Parameters.AddWithValue("@Remarks", remarks)
 
                     ' Execute the INSERT query
                     insertCommand.ExecuteNonQuery()
@@ -229,9 +235,12 @@ Public Class adminForm
 
     Private Sub ClearInputFields()
         ' Clear the input fields
+        txtItemCode.Text = String.Empty
         txtYearAge.Text = String.Empty
+        cbAssetType.SelectedIndex = -1
+        txtCurrentUser.Text = String.Empty
         dtpPurchaseDate.Value = DateTime.Now
-        txtIssuedTo.Text = String.Empty
+        txtSerialNumber.Text = String.Empty
         cbDepartment.SelectedIndex = -1
         cbBrand.SelectedIndex = -1
         txtModel.Text = String.Empty
@@ -240,30 +249,31 @@ Public Class adminForm
         dtpO365.Value = DateTime.Now
         cbActiveDirectory.SelectedIndex = -1
         cbStatus.SelectedIndex = -1
-        txtCurrentUser.Text = String.Empty
-        cbAssetType.SelectedIndex = -1
+        txtRemarks.Text = String.Empty
     End Sub
 
 
     Private Sub RefreshData()
         ' Clear the input controls
         txtUnitNumber.Text = String.Empty
+        txtItemCode.Text = String.Empty
+        txtCurrentUser.Text = String.Empty
         dtpPurchaseDate.Value = DateTime.Now
         txtYearAge.Text = String.Empty
-        txtIssuedTo.Text = String.Empty
+        txtSerialNumber.Text = String.Empty
         cbDepartment.Text = String.Empty
         cbBrand.Text = String.Empty
+        txtModel.Text = String.Empty
         txtProcessor.Text = String.Empty
         cbWindows.Text = String.Empty
         dtpO365.Text = DateTime.Now
         cbActiveDirectory.Text = String.Empty
         cbAssetType.Text = String.Empty
-        txtCurrentUser.Text = String.Empty
-        txtModel.Text = String.Empty
         cbStatus.Text = String.Empty
+        txtRemarks.Text = String.Empty
 
         ' Retrieve the updated data from the database and bind it to the table form controls
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;Persist Security Info=True;User ID=sa;Password=password"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
         Dim query As String = "SELECT * FROM [TBmptii-assets] ORDER BY [Unit Number] ASC"
 
         Using connection As New SqlConnection(connectionString)
@@ -376,9 +386,10 @@ Public Class adminForm
 
                 ' Populate the input controls with the cell values
                 txtUnitNumber.Text = clickedRow.Cells("Unit Number").Value.ToString()
+                txtItemCode.Text = clickedRow.Cells("Item Code").Value.ToString()
                 dtpPurchaseDate.Value = DateTime.Parse(clickedRow.Cells("Purchase Date").Value.ToString())
                 txtYearAge.Text = clickedRow.Cells("Year Age").Value.ToString()
-                txtIssuedTo.Text = clickedRow.Cells("Issued To").Value.ToString()
+                txtSerialNumber.Text = clickedRow.Cells("Serial Number").Value.ToString()
                 cbDepartment.Text = clickedRow.Cells("Department").Value.ToString()
                 cbBrand.Text = clickedRow.Cells("Brand").Value.ToString()
                 txtModel.Text = clickedRow.Cells("Model").Value.ToString()
@@ -389,6 +400,7 @@ Public Class adminForm
                 txtCurrentUser.Text = clickedRow.Cells("Current User").Value.ToString()
                 cbStatus.Text = clickedRow.Cells("Status").Value.ToString()
                 cbAssetType.Text = clickedRow.Cells("Asset Type").Value.ToString()
+                txtRemarks.Text = clickedRow.Cells("Remarks").Value.ToString()
             End If
         End If
     End Sub
@@ -399,6 +411,9 @@ Public Class adminForm
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         ' Get the values from the input controls
         Dim unitNumber As Integer
+        Dim itemCode As String
+        Dim assetType As String
+        Dim currentUser As String
         Dim yearAge As Double
         Dim purchaseDate As DateTime
         Dim issuedTo As String
@@ -409,16 +424,18 @@ Public Class adminForm
         Dim windows As String
         Dim o365Expiration As DateTime
         Dim activeDirectory As String
-        Dim currentUser As String
         Dim status As String
-        Dim assetType As String
+        Dim remarks As String
 
         ' Exception handling for null values
         Try
             unitNumber = Integer.Parse(txtUnitNumber.Text)
+            itemCode = txtItemCode.Text
+            assetType = cbAssetType.Text
+            currentUser = txtCurrentUser.Text
             yearAge = Double.Parse(txtYearAge.Text)
             purchaseDate = dtpPurchaseDate.Value
-            issuedTo = txtIssuedTo.Text
+            issuedTo = txtSerialNumber.Text
             department = cbDepartment.Text
             brand = cbBrand.Text
             model = txtModel.Text ' Get the value for Model
@@ -426,28 +443,32 @@ Public Class adminForm
             windows = cbWindows.Text
             o365Expiration = dtpO365.Value
             activeDirectory = cbActiveDirectory.Text
-            currentUser = txtCurrentUser.Text
             status = cbStatus.Text
-            assetType = cbAssetType.Text
+            remarks = txtRemarks.Text
+
         Catch ex As Exception
             MessageBox.Show("Please enter valid values for all fields.")
             Return
         End Try
 
         ' Connection string for your SQL Server
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;Persist Security Info=True;User ID=sa;Password=password"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
 
         ' SQL query to update the data in the table
-        Dim query As String = "UPDATE [TBmptii-assets] SET [Purchase Date] = @PurchaseDate, [Year Age] = @YearAge, [Issued To] = @IssuedTo, [Department] = @Department, [Brand] = @Brand, [Model] = @Model, [Processor] = @Processor, [Windows] = @Windows, [O365 Expiration] = @O365Expiration, [Active Directory] = @ActiveDirectory, [Asset Type] = @AssetType, [Current User] = @CurrentUser, [Status] = @Status WHERE [Unit Number] = @UnitNumber"
+        Dim query As String = "UPDATE [TBmptii-assets] SET [Item Code] = @ItemCode, [Purchase Date] = @PurchaseDate, [Year Age] = @YearAge, [Serial Number] = @SerialNumber, [Department] = @Department, [Brand] = @Brand, [Model] = @Model, [Processor] = @Processor, [Windows] = @Windows, [O365 Expiration] = @O365Expiration, [Active Directory] = @ActiveDirectory, [Asset Type] = @AssetType, [Current User] = @CurrentUser, [Status] = @Status, [Remarks] = @Remarks WHERE [Unit Number] = @UnitNumber"
 
         ' Create a new SqlConnection using the connection string
         Using connection As New SqlConnection(connectionString)
             ' Create a new SqlCommand using the query and connection
             Using command As New SqlCommand(query, connection)
                 ' Add parameters to the command
+                command.Parameters.AddWithValue("@UnitNumber", unitNumber)
+                command.Parameters.AddWithValue("@ItemCode", itemCode)
+                command.Parameters.AddWithValue("@AssetType", assetType)
+                command.Parameters.AddWithValue("@CurrentUser", currentUser)
                 command.Parameters.AddWithValue("@PurchaseDate", purchaseDate)
                 command.Parameters.AddWithValue("@YearAge", yearAge)
-                command.Parameters.AddWithValue("@IssuedTo", issuedTo)
+                command.Parameters.AddWithValue("@SerialNumber", issuedTo)
                 command.Parameters.AddWithValue("@Department", department)
                 command.Parameters.AddWithValue("@Brand", brand)
                 command.Parameters.AddWithValue("@Model", model) ' Add the parameter for Model
@@ -455,10 +476,8 @@ Public Class adminForm
                 command.Parameters.AddWithValue("@Windows", windows)
                 command.Parameters.AddWithValue("@O365Expiration", o365Expiration)
                 command.Parameters.AddWithValue("@ActiveDirectory", activeDirectory)
-                command.Parameters.AddWithValue("@CurrentUser", currentUser)
                 command.Parameters.AddWithValue("@Status", status)
-                command.Parameters.AddWithValue("@UnitNumber", unitNumber)
-                command.Parameters.AddWithValue("@AssetType", assetType)
+                command.Parameters.AddWithValue("@Remarks", remarks)
 
                 ' Open the connection
                 connection.Open()

@@ -7,7 +7,7 @@ Public Class loginForm
 
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        Dim connectionString As String = "Data Source=MKP-PERSONAL\SQLEXPRESS01;Initial Catalog=DBmptii_master-asset;Persist Security Info=True;User ID=sa;Password=password"
+        Dim connectionString As String = DatabaseHelper.GetConnectionString()
         Dim username As String = txtUsername.Text.Trim()
         Dim password As String = txtPassword.Text.Trim()
 
@@ -15,7 +15,7 @@ Public Class loginForm
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand()
                 command.Connection = connection
-                command.CommandText = "SELECT COUNT(*) FROM [DBmptii_master-asset].[dbo].[TBmptii-users] WHERE [Username] = @Username AND [Password] = @Password"
+                command.CommandText = "SELECT COUNT(*) FROM [OJRS].[dbo].[TBmptii-users] WHERE [Username] = @Username AND [Password] = @Password"
                 command.Parameters.AddWithValue("@Username", username)
                 command.Parameters.AddWithValue("@Password", password)
 
@@ -82,7 +82,7 @@ Public Class loginForm
         ' Here, let's assume the admin role is represented by "Admin"
         Using command As New SqlCommand()
             command.Connection = connection
-            command.CommandText = "SELECT COUNT(*) FROM [DBmptii_master-asset].[dbo].[TBmptii-users] WHERE [Username] = @Username AND [Password] = @Password AND [Role] = 'Admin'"
+            command.CommandText = "SELECT COUNT(*) FROM [OJRS].[dbo].[TBmptii-users] WHERE [Username] = @Username AND [Password] = @Password AND [Role] = 'Admin'"
             command.Parameters.AddWithValue("@Username", username)
             command.Parameters.AddWithValue("@Password", password)
 
